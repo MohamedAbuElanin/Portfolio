@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dream Place</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="container">
+
+    <header class="navbar container">
+        <div class="logo">
+            <i class="fa-solid fa-plane-departure"></i> My Dream Place
+        </div>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Discover</a>
+            <a href="#">Activities</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="auth-buttons">
+            <button class="btn btn-register">Register</button>
+            <button class="btn btn-signin">Sign in</button>
+        </div>
+    </header>
+
+    <main class="hero-section">
+        <div class="hero-image-container">
+            <img src="./gg.jpg" alt="Sydney skyline with Opera House" class="hero-image">
+        </div>
+        <div class="hero-content">
+            <h1>Enjoy Your Dream Vacation</h1>
+            <p>Plan and book our perfect trip with expert advice, travel tips, destination information and inspiration from us</p>
+            
+            <form class="search-bar">
+                <div class="input-group">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" placeholder="Where are you going?" aria-label="Where are you going?">
+                </div>
+                <div class="input-group">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <input type="text" placeholder="Check in date" onfocus="(this.type='date')" onblur="(this.type='text')" aria-label="Check in date">
+                </div>
+                <div class="input-group">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <input type="text" placeholder="Check out date" onfocus="(this.type='date')" onblur="(this.type='text')" aria-label="Check out date">
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-user-group"></i>
+                    <input type="number" placeholder="Guests" min="1" aria-label="Guests">
+                </div>
+                <button type="submit" class="btn btn-search">Search</button>
+            </form>
+        </div>
+    </main>
+
+    <div class="alert-banner container">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        Check the latest COVID-19 restrictions before you travel. <a href="#">Learn more</a>
+    </div>
+
+    <section class="features-section container">
+        <h2>Why choose us</h2>
+        <div class="features-container">
+            <div class="feature-item">
+                <i class="fa-solid fa-ticket feature-icon"></i>
+                <h3>Ultimate flexibility</h3>
+                <p>You're in control, with free cancellation and payment options to satisfy any plan or budget.</p>
+            </div>
+
+            <div class="feature-item">
+                <i class="fa-solid fa-lightbulb feature-icon"></i>
+                <h3>Memorable experiences</h3>
+                <p>Browse and book tours and activities so incredible, you'll want to tell your friends.</p>
+            </div>
+
+            <div class="feature-item">
+                <i class="fa-solid fa-gem feature-icon"></i>
+                <h3>Quality at our core</h3>
+                <p>High-quality standards. Millions of reviews. A tourz company.</p>
+            </div>
+
+            <div class="feature-item">
+                <i class="fa-solid fa-trophy feature-icon"></i>
+                <h3>Award-winning support</h3>
+                <p>New price? New plan? No problem. We're here to help. 24/7.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="destinations-section container">
+        <h2>Enjoy your dream vacation</h2>
+        <p class="section-subtitle">Plan and book our perfect trip with expert advice, travel tips, destination information and inspiration from us</p>
+
+        <div class="destinations-grid">
+            <div class="destination-card">
+                <img src="Australia.jpg" alt="Sydney skyline" class="destination-image">
+                <div class="card-info">
+                    <h3>Australia</h3>
+                    <p>2248 properties</p>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <img src="Japan.jpg" alt="Pagoda with Mount Fuji" class="destination-image">
+                <div class="card-info">
+                    <h3>Japan</h3>
+                    <p>1278 properties</p>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <img src="New Zealand.jpg" alt="New Zealand coast" class="destination-image">
+                <div class="card-info">
+                    <h3>New Zealand</h3>
+                    <p>480 properties</p>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <img src="Greece.jpg" alt="Greek island town" class="destination-image">
+                <div class="card-info">
+                    <h3>Greece</h3>
+                    <p>320 properties</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="inspiration-section container">
+        <h2>Get inspiration for your next trip</h2>
+        <div class="inspiration-grid">
+            
+            <div class="inspiration-card large" style="background-image: url('Sydeny’s 10 most fashionable 5 star hotels.jpg');">
+                <div class="card-overlay">
+                    <h3>Sydeny’s 10 most fashionable 5 star hotels</h3>
+                    <p>Browse the fastest growing tourism sector in the heart of Australia tourism capital....</p>
+                </div>
+            </div>
+
+            <div class="inspiration-card medium" style="background-image: url('Enjoy your vacation in best hotels of United Kingdom.jpg');">
+                <div class="card-overlay">
+                    <h3>Enjoy your vacation in best hotels of United Kingdom</h3>
+                    <p>Top sites where you do not have to worry about being a vegan. Our tourist guide is here...</p>
+                </div>
+            </div>
+
+            <div class="inspiration-card medium" style="background-image: url('World’s top destinations during and post covid timeline.jpg');">
+                <div class="card-overlay">
+                    <h3>World’s top destinations during and post covid timeline</h3>
+                    <p>Pandemic is still intact and will be here for a longer time. Here's where your next destination...</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="hotels-section container">
+        <h2>Popular hotels</h2>
+        <div class="hotels-grid">
+            
+            <div class="hotel-card">
+                <img src="Lakeside Motel Warefront.jpg" alt="Lakeside Motel Warefront" class="hotel-image">
+                <div class="card-info">
+                    <h3>Lakeside Motel Warefront</h3>
+                    <p>2246 properties</p>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="Recce Graham resort.jpg" alt="Recce Graham resort" class="hotel-image">
+                <div class="card-info">
+                    <h3>Recce Graham resort</h3>
+                    <p>1278 properties</p>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="Fireside Dinners.jpg" alt="Fireside Dinners" class="hotel-image">
+                <div class="card-info">
+                    <h3>Fireside Dinners</h3>
+                    <p>480 properties</p>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="Oculous Inn Stay.jpg" alt="Oculous Inn Stay" class="hotel-image">
+                <div class="card-info">
+                    <h3>Oculous Inn Stay</h3>
+                    <p>320 properties</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="activities-section container">
+        <div class="section-header">
+            <h2>Popular things to do</h2>
+            <a href="#" class="see-all-link">See all</a>
+        </div>
+        <div class="activities-grid">
+            
+            <div class="activity-card large-v" style="background-image: url('Cruises.jpeg');">
+                <div class="card-overlay">Cruises</div>
+            </div>
+
+            <div class="activity-card large-v" style="background-image: url('City Tours.png');">
+                <div class="card-overlay">City Tours</div>
+            </div>
+
+            <div class="activity-card small-h" style="background-image: url('Museum Tour.jpg');">
+                <div class="card-overlay">Museum Tour</div>
+            </div>
+
+            <div class="activity-card large-h" style="background-image: url('Beach Tours.jpeg');">
+                <div class="card-overlay">Beach Tours</div>
+            </div>
+            
+            <div class="activity-card small-h" style="background-image: url('Food.jpg');">
+                <div class="card-overlay">Food</div>
+            </div>
+            
+            <div class="activity-card small-h" style="background-image: url('Hiking.jpg');">
+                <div class="card-overlay">Hiking</div>
+            </div>
+
+        </div>
+    </section>
+    
+    <section class="footprints-section container">
+        <h2>Our Footprints</h2>
+        <div class="footprints-container">
+            <div class="footprint-item">
+                <i class="fa-solid fa-gem footprint-icon"></i>
+                <div class="number">932M</div>
+                <div class="label">Total Donations</div>
+            </div>
+
+            <div class="footprint-item">
+                <i class="fa-solid fa-route footprint-icon"></i>
+                <div class="number">24M</div>
+                <div class="label">Campaigns Closed</div>
+            </div>
+
+            <div class="footprint-item">
+                <i class="fa-solid fa-user footprint-icon"></i>
+                <div class="number">10M</div>
+                <div class="label">Happy People</div>
+            </div>
+
+            <div class="footprint-item">
+                <i class="fa-solid fa-parachute-box footprint-icon"></i>
+                <div class="number">65M</div>
+                <div class="label">Our Volunteers</div>
+            </div>
+        </div>
+
+        <div class="app-banner" style="background-image: url('Download the mobile application for bonus coupons and travel codes.jpg');">
+            <div class="banner-content">
+                <h3>Download the mobile application for bonus coupons and travel codes</h3>
+                <button class="btn btn-download">Download mobile app</button>
+            </div>
+            </div>
+    </section>
+
+<footer class="main-footer container">
+        <div class="footer-header-section">
+            <h2>Explore the world with My Dream place</h2>
+            <div class="discover-box">
+                <p>Discover new places and experiences</p>
+            </div>
+        </div>
+
+        <div class="footer-links-container">
+            <div class="footer-column logo-column">
+                <div class="logo">
+                    <i class="fa-solid fa-plane-departure"></i> My Dream Place
+                </div>
+                <p class="tagline">Your next go-to companion for travel</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Newsroom</a></li>
+                    <li><a href="#">Advertising</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#">Australia</a></li>
+                    <li><a href="#">New Zealand</a></li>
+                    <li><a href="#">United States America (USA)</a></li>
+                    <li><a href="#">Greece</a></li>
+                    <li><a href="#">Maldives</a></li>
+                    <li><a href="#">Singapore</a></li>
+                    <li><a href="#">See more</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Terms and Policies</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of use</a></li>
+                    <li><a href="#">Acessibility</a></li>
+                    <li><a href="#">Reward system policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Cancel your bookings</a></li>
+                    <li><a href="#">Use Coupon</a></li>
+                    <li><a href="#">Refund Policies</a></li>
+                    <li><a href="#">International Travel Documents</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2025-2026 Mohamed Osman Abu Al-Anin. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

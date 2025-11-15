@@ -1,0 +1,369 @@
+:root{
+    --orange: #ff7a00; 
+    --card-bg: #ffffff;
+    --card-radius: 12px;
+    --card-padding: 16px;
+    --card-border-width: 2px;
+}
+body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif; 
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background-color: #1a1a1a; 
+    color: #fff;
+    padding: 1rem 5%;
+    position: fixed; 
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-sizing: border-box; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 2rem; 
+}
+
+.nav-links a {
+    color: #fff;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover {
+    color: #D16729; 
+}
+.hero {
+    background-image: url('./bg.webp'); 
+    background-size: cover;
+    background-position: center;
+    height: 90vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative; 
+    padding-top: 60px; 
+}
+.hero::before {
+    content: ''; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1; 
+}
+.hero-content {
+    position: relative; 
+    z-index: 2;
+    max-width: 650px;
+    padding: 0 1rem;
+}
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+.cta-button {
+    background-color: #ff6004; 
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+.cta-button:hover {
+    background-color: #b95a24; 
+}
+.recipes-preview{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #000;
+}
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 250px); 
+    gap: 2rem;
+    margin-top: 2.5rem;
+    justify-content: center; 
+    text-align: center;
+}
+
+.recipe-card {
+    background-color: #ffffff;
+    border: 2px solid #ff6004; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 220px; 
+    object-fit: cover; 
+    display: block;
+}
+
+.recipe-card-content {
+    padding: 1.5rem;
+}
+
+.recipe-card-content h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #ff6004;  
+}
+
+.recipe-card-content p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.recipe-button {
+    display: inline-block; 
+    background-color: #ff6004; 
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.recipe-button:hover {
+    background-color: #ff6004; 
+}
+
+.chefs-section {
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.9rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+}
+
+.section-desc {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* cards */
+.chefs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    gap: 2rem;
+    justify-content: center;
+}
+
+.chef-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #ff6004;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.chef-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.chef-content {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.chef-content h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.chef-role {
+    color: #ff6004;
+    font-weight: 700;
+    margin-bottom: 0.9rem;
+    display: block;
+}
+
+.chef-content p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.7rem;
+}
+
+.contact-section p {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 2.5rem auto;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.contact-container {
+    max-width: 650px;
+    background: #fff;
+    padding: 2.5rem;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.contact-container label {
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    display: block;
+    font-size: 0.95rem;
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 0.8rem;
+    border-radius: 6px;
+    margin-bottom: 1.3rem;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+    border-color: #D16729;
+}
+
+.contact-btn {
+    display: block;
+    margin: 1rem auto 0 auto;
+    background-color: #D16729;
+    color: #fff;
+    padding: 0.7rem 1.8rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #b95a24;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 0;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+
+@media (max-width: 992px) {
+    .recipe-grid {
+        grid-template-columns: repeat(2, 2px);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        margin-top: 60px; /* تزود المسافة بين اللوجو والسكشن */
+    }
+}
+
+@media (max-width: 576px) {
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+    .recipes-preview h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        margin-top: 60px;
+    }
+}
+
+
+
+
