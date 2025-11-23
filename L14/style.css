@@ -531,17 +531,14 @@
 
 
 @media (max-width: 992px) {
-    /* --- General Layout & Header --- */
     .header {
         padding: 20px 30px;
     }
     
-    /* إخفاء شريط التنقل وتحويله إلى قائمة همبرغر (نظريًا، لا يوجد كود الهامبرغر هنا) */
     .navbar {
-        display: none; /* يتم إخفاؤها عادةً وتفعيلها بالـ JavaScript */
+        display: none; 
     }
 
-    /* --- Hero Section --- */
     .hero-content {
         width: 90%;
         margin-top: -100px;
@@ -551,7 +548,6 @@
         font-size: 40px;
     }
 
-    /* تقسيم شريط البحث عموديًا بدلاً من أفقيًا */
     .search-bar-container {
         flex-direction: column;
     }
@@ -564,7 +560,7 @@
     }
 
     .placeholder-span {
-        display: none; /* إخفاء المساحة الفارغة */
+        display: none; 
     }
 
     .find-trip-btn {
@@ -573,65 +569,69 @@
         padding: 12px 20px;
     }
 
-    /* --- About/Stats Section --- */
     .about-stats-section .container {
         flex-direction: column;
         gap: 50px;
     }
 
     .image-gallery, .content-stats {
-        width: 100%; /* جعل الأقسام تأخذ العرض بالكامل */
+        width: 100%; 
     }
 
     .image-gallery {
-        height: 400px; /* تقليل ارتفاع معرض الصور */
+        height: 400px; 
     }
     
-    /* إعادة تموضع الصور لتظهر في المنتصف وأقرب لبعضها */
     .main-image, .secondary-image-1, .secondary-image-2 {
         width: 200px;
         height: 300px;
     }
 
-    .main-image { top: 50px; left: 50px; z-index: 9; }
-    .secondary-image-1 { top: 0; left: 180px; z-index: 8; }
-    .secondary-image-2 { top: 100px; left: 280px; z-index: 7; }
+    .main-image {
+        top: 50px;
+        left: 50px;
+        z-index: 9; 
+    }
+    .secondary-image-1 {
+        top: 0; 
+        left: 180px;
+        z-index: 8;
+    }
+    .secondary-image-2 { top
+        : 100px; 
+        left: 280px;
+        z-index: 7;
+    }
 
     .stats-grid {
-        grid-template-columns: repeat(4, 1fr); /* عرض الإحصائيات في 4 أعمدة صغيرة */
+        grid-template-columns: repeat(4, 1fr);
         gap: 15px;
     }
     
-    /* --- Destination Section --- */
     .destination-grid {
-        grid-template-columns: repeat(2, 1fr); /* عرض البطاقات في عمودين */
+        grid-template-columns: repeat(2, 1fr); 
         gap: 20px;
     }
     
-    /* --- Testimonial Section --- */
     .testimonial-grid {
-        grid-template-columns: repeat(2, 1fr); /* عرض آراء العملاء في عمودين */
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    /* --- Footer --- */
     .footer-content {
-        grid-template-columns: repeat(2, 1fr); /* عرض التذييل في عمودين */
+        grid-template-columns: repeat(2, 1fr);
         gap: 50px;
     }
 }
 
 @media (max-width: 768px) {
-    /* --- General Layout --- */
     body {
         font-size: 14px;
     }
 
-    /* إخفاء اللوجو لإعطاء مساحة أكبر إذا لزم الأمر */
     .logo {
         font-size: 22px;
     }
     
-    /* --- Hero Section --- */
     .hero-content h1 {
         font-size: 32px;
     }
@@ -640,7 +640,6 @@
         font-size: 13px;
     }
 
-    /* --- About/Stats Section (Simplified Image Layout) --- */
     .about-stats-section .container {
         padding: 0 20px;
     }
@@ -688,35 +687,32 @@
     }
 
     .stats-grid {
-        grid-template-columns: repeat(2, 1fr); /* إعادة عرض الإحصائيات في عمودين */
+        grid-template-columns: repeat(2, 1fr);
         text-align: center;
     }
 
-    /* --- Destination Section --- */
     .destination-section {
         padding: 60px 20px;
     }
     
     .destination-grid {
-        grid-template-columns: 1fr; /* عرض البطاقات في عمود واحد */
+        grid-template-columns: 1fr;
     }
     
     .destination-header h2 {
         font-size: 30px;
     }
 
-    /* --- Testimonial Section --- */
     .testimonial-section {
         padding: 60px 20px;
     }
     
     .testimonial-grid {
-        grid-template-columns: 1fr; /* عرض آراء العملاء في عمود واحد */
+        grid-template-columns: 1fr; 
     }
 
-    /* --- Footer --- */
     .footer-content {
-        grid-template-columns: 1fr; /* عرض التذييل في عمود واحد */
+        grid-template-columns: 1fr;
         padding: 0 20px 30px;
     }
     
