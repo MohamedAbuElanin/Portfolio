@@ -528,3 +528,191 @@
     background-color: #28a745;
     border-color: #28a745;
 }
+
+@media (max-width: 992px) {
+    /* --- General Layout & Header --- */
+    .header {
+        padding: 20px 30px;
+    }
+    
+    /* إخفاء شريط التنقل وتحويله إلى قائمة همبرغر (نظريًا، لا يوجد كود الهامبرغر هنا) */
+    .navbar {
+        display: none; /* يتم إخفاؤها عادةً وتفعيلها بالـ JavaScript */
+    }
+
+    /* --- Hero Section --- */
+    .hero-content {
+        width: 90%;
+        margin-top: -100px;
+    }
+    
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    /* تقسيم شريط البحث عموديًا بدلاً من أفقيًا */
+    .search-bar-container {
+        flex-direction: column;
+    }
+
+    .search-input-wrapper {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    .placeholder-span {
+        display: none; /* إخفاء المساحة الفارغة */
+    }
+
+    .find-trip-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 20px;
+    }
+
+    /* --- About/Stats Section --- */
+    .about-stats-section .container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .image-gallery, .content-stats {
+        width: 100%; /* جعل الأقسام تأخذ العرض بالكامل */
+    }
+
+    .image-gallery {
+        height: 400px; /* تقليل ارتفاع معرض الصور */
+    }
+    
+    /* إعادة تموضع الصور لتظهر في المنتصف وأقرب لبعضها */
+    .main-image, .secondary-image-1, .secondary-image-2 {
+        width: 200px;
+        height: 300px;
+    }
+
+    .main-image { top: 50px; left: 50px; z-index: 9; }
+    .secondary-image-1 { top: 0; left: 180px; z-index: 8; }
+    .secondary-image-2 { top: 100px; left: 280px; z-index: 7; }
+
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr); /* عرض الإحصائيات في 4 أعمدة صغيرة */
+        gap: 15px;
+    }
+    
+    /* --- Destination Section --- */
+    .destination-grid {
+        grid-template-columns: repeat(2, 1fr); /* عرض البطاقات في عمودين */
+        gap: 20px;
+    }
+    
+    /* --- Testimonial Section --- */
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr); /* عرض آراء العملاء في عمودين */
+    }
+
+    /* --- Footer --- */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr); /* عرض التذييل في عمودين */
+        gap: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* --- General Layout --- */
+    body {
+        font-size: 14px;
+    }
+
+    /* إخفاء اللوجو لإعطاء مساحة أكبر إذا لزم الأمر */
+    .logo {
+        font-size: 22px;
+    }
+    
+    /* --- Hero Section --- */
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    
+    .hero-content p {
+        font-size: 13px;
+    }
+
+    /* --- About/Stats Section (Simplified Image Layout) --- */
+    .about-stats-section .container {
+        padding: 0 20px;
+    }
+    
+    .image-gallery {
+        height: 350px; 
+    }
+
+    /* عرض صورة واحدة كبيرة فقط وإخفاء الباقي لتبسيط العرض على الهاتف */
+    .secondary-image-1, .secondary-image-2 {
+        display: none;
+    }
+
+    .main-image {
+        /* توسيع الصورة الرئيسية لتشغل معظم المساحة */
+        width: 90%; 
+        height: 350px;
+        top: 0;
+        left: 5%; 
+    }
+    
+    .content-stats h2 {
+        font-size: 30px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr); /* إعادة عرض الإحصائيات في عمودين */
+        text-align: center;
+    }
+
+    /* --- Destination Section --- */
+    .destination-section {
+        padding: 60px 20px;
+    }
+    
+    .destination-grid {
+        grid-template-columns: 1fr; /* عرض البطاقات في عمود واحد */
+    }
+    
+    .destination-header h2 {
+        font-size: 30px;
+    }
+
+    /* --- Testimonial Section --- */
+    .testimonial-section {
+        padding: 60px 20px;
+    }
+    
+    .testimonial-grid {
+        grid-template-columns: 1fr; /* عرض آراء العملاء في عمود واحد */
+    }
+
+    /* --- Footer --- */
+    .footer-content {
+        grid-template-columns: 1fr; /* عرض التذييل في عمود واحد */
+        padding: 0 20px 30px;
+    }
+    
+    .footer-content .footer-col {
+        margin-bottom: 20px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .footer-bottom p {
+        margin-bottom: 15px;
+    }
+    
+    .social-links {
+        margin-left: 0;
+    }
+}
