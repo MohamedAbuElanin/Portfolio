@@ -198,18 +198,18 @@
 }
 
 .main-image {
-    width: 280px;
+    width: 200px;
     height: 400px;
-    top: 0;
+    top: 0px;
     left: 0;
     z-index: 9; 
     border-radius: 999px 999px 999px 999px; 
 }
 
 .secondary-image-1 {
-    width: 220px;
+    width: 200px;
     height: 400px;
-    top: 200px; 
+    top: 85px; 
     left: 150px; 
     z-index: 8; 
     border-radius: 999px 999px 999px 999px;
@@ -218,7 +218,7 @@
 .secondary-image-2 {
     width: 200px;
     height: 400px;
-    top: 50px;
+    top: 150px;
     left: 300px; 
     z-index: 7; 
     border-radius: 999px 999px 999px 999px; 
@@ -529,6 +529,7 @@
     border-color: #28a745;
 }
 
+
 @media (max-width: 992px) {
     /* --- General Layout & Header --- */
     .header {
@@ -645,22 +646,43 @@
     }
     
     .image-gallery {
-        height: 350px; 
+        height: 450px; 
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 100%; 
     }
 
-    /* عرض صورة واحدة كبيرة فقط وإخفاء الباقي لتبسيط العرض على الهاتف */
     .secondary-image-1, .secondary-image-2 {
-        display: none;
+        display: block;
     }
 
     .main-image {
-        /* توسيع الصورة الرئيسية لتشغل معظم المساحة */
-        width: 90%; 
-        height: 350px;
-        top: 0;
-        left: 5%; 
+        width: 30%; 
+        height: 250px;
+        top: -50px;
+        left: 65%;
+        transform: translateX(-50%);
+        z-index: 9;
     }
     
+    .secondary-image-1 {
+        width: 30%; 
+        height: 250px;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%); 
+        z-index: 8;
+    }
+
+    .secondary-image-2 {
+        width: 30%; 
+        height: 250px;
+        top: 250px; 
+        left: 35%;
+        transform: translateX(-50%);
+        z-index: 7; 
+    }
+
     .content-stats h2 {
         font-size: 30px;
     }
