@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="./Registration Form.css">
+</head>
+<body>
+    <div class="container">
+        <form id="registrationForm">
+            <h2>Create Account</h2>
+            <div class="input-group">
+                <label>First Name:</label>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="firstName" placeholder="e.g. Ahmed">
+                </div>
+                <small class="error-msg" id="firstError"></small>
+            </div>
+            <div class="input-group">
+                <label>Last Name:</label>
+                <div class="input-field">
+                    <i class="fas fa-user-tag"></i>
+                    <input type="text" id="lastName" placeholder="e.g. Mohamed">
+                </div>
+                <small class="error-msg" id="lastError"></small>
+            </div>
+            <div class="input-group">
+                <label>Phone Number:</label>
+                <div class="input-field">
+                    <i class="fas fa-phone"></i>
+                    <input type="text" id="phone" placeholder="010 / 011 / 012 / 015...">
+                </div>
+                <small class="error-msg" id="phoneError"></small>
+            </div>
+            <div class="input-group">
+                <label>Birth Date:</label>
+                <div class="input-field">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="text" id="birthDate" placeholder="yyyy/mm/dd">
+                </div>
+                <small class="error-msg" id="birthError"></small>
+            </div>
+            <div class="input-group">
+                <label>Email:</label>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" placeholder="example@mail.com">
+                </div>
+                <small class="error-msg" id="emailError"></small>
+            </div>
+            <div class="password-row">
+                <div class="input-group">
+                    <label>Password:</label>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" placeholder="********">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Confirm Password:</label>
+                    <div class="input-field">
+                        <i class="fas fa-check-double"></i>
+                        <input type="password" id="confirmPassword" placeholder="********">
+                    </div>
+                </div>
+            </div>
+            <small class="error-msg" id="passError"></small>
+            <button type="submit" id="submitBtn">Submit</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2025 Mohamed Osman Abu El-Anin. All rights reserved.</p>
+    </footer>
+    <script src="./main.js"></script>
+</body>
+</html>
