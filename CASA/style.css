@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f4f7fb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #ff7a18, #ffb347);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+  color: #fff;
+  font-size: 30px;
+  font-family: 'Asimovian', sans-serif;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.search-box {
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 30px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    margin-left: 6px;
+}
+
+/* Categories */
+    .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+}
+
+.categories button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    background: #2c3e50;
+    color: #fff;
+    cursor: pointer;
+}
+
+.categories button:hover {
+    background: #ff7a18;
+}
+
+/* Products */
+.products {
+  flex: 1; /* ⭐ ده المهم */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+}
+
+.card h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 13px;
+    color: #666;
+}
+
+.price {
+    margin: 10px 0;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.card-footer {
+  margin-top: auto; /* ينزل السعر والزر لتحت */
+}
+
+.price {
+  margin-bottom: 8px;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+
+/* Button */
+.buy-btn {
+  width: 100%;
+  padding: 10px;
+  background: #ff7a18;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+
+  margin-top: auto; /* ⭐ الحل السحري */
+}
+
+
+.buy-btn i {
+    margin-right: 5px;
+}
+
+.buy-btn:hover {
+    background: #e96b0c;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+    background: linear-gradient(135deg, #ff7a18, #ffb347);
+    color: #fff;
+}
+
