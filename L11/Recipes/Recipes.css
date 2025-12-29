@@ -54,7 +54,7 @@ nav {
     transition: color 0.3s ease;
 }
 .nav-links a:hover {
-    color: #ff7a00; 
+    color: var(--orange); 
 }
 .search-section {
     text-align: center;
@@ -75,7 +75,7 @@ nav {
 .search-bar input {
     width: 100%;
     padding: 15px 20px;
-    border: 1px solid #ff7a00;
+    border: 1px solid var(--orange);
     border-radius: 4px;
     outline: none;
     background: transparent;
@@ -85,13 +85,13 @@ nav {
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    color: #ff7a00;
+    color: var(--orange);
 }
 main {
     padding: 0 50px 50px 50px;
 }
 .section-title {
-    color: #ff7a00;
+    color: var(--orange);
     font-family: 'Playfair Display', serif;
     font-size: 18px;
     margin-bottom: 20px;
@@ -102,7 +102,7 @@ main {
     display: flex;
     align-items: center;
     padding: 25px 0;
-    border-bottom: 1.5px solid #ff7a00; 
+    border-bottom: 1.5px solid var(--orange); 
 }
 .recipe-image {
     width: 120px;
@@ -133,7 +133,7 @@ main {
     display: block;
     margin-top: 10px;
     font-size: 12px;
-    color: #ff7a00;
+    color: var(--orange);
     text-decoration: none;
     font-weight: bold;
 }

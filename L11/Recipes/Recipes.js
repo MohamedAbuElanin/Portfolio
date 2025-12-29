@@ -1,7 +1,6 @@
 const recipesContainer = document.getElementById('recipesContainer');
 const searchInput = document.getElementById('searchInput');
 
-// وظيفة جلب البيانات من API
 async function fetchRecipes() {
     try {
         const response = await fetch('https://dummyjson.com/recipes');
@@ -13,9 +12,8 @@ async function fetchRecipes() {
     }
 }
 
-// وظيفة عرض الوصفات في الصفحة
 function displayRecipes(recipes) {
-    recipesContainer.innerHTML = ''; // مسح محتوى التحميل
+    recipesContainer.innerHTML = ''; 
 
     recipes.forEach(recipe => {
         const recipeHTML = `
@@ -32,7 +30,6 @@ function displayRecipes(recipes) {
     });
 }
 
-// وظيفة البحث (لتصفية الوصفات المعروضة)
 searchInput.addEventListener('input', (e) => {
     const term = e.target.value.toLowerCase();
     const allCards = document.querySelectorAll('.recipe-card');
@@ -47,5 +44,4 @@ searchInput.addEventListener('input', (e) => {
     });
 });
 
-// تشغيل الجلب عند فتح الصفحة
 fetchRecipes();
