@@ -4,7 +4,6 @@ const searchInput = document.getElementById("searchInput");
 
 let allProducts = [];
 
-/* Fetch Products */
 fetch("https://dummyjson.com/products?limit=100")
   .then(res => res.json())
   .then(data => {
@@ -13,7 +12,6 @@ fetch("https://dummyjson.com/products?limit=100")
     renderCategories(allProducts);
   });
 
-/* Render Products */
 function renderProducts(products) {
   productsContainer.innerHTML = "";
 
@@ -35,7 +33,6 @@ function renderProducts(products) {
   });
 }
 
-/* Render Categories */
 function renderCategories(products) {
   const categories = [...new Set(products.map(p => p.category))];
 
@@ -48,7 +45,6 @@ function renderCategories(products) {
   });
 }
 
-/* Filter by Category */
 function filterCategory(category) {
   if (category === "all") {
     renderProducts(allProducts);
@@ -58,7 +54,6 @@ function filterCategory(category) {
   }
 }
 
-/* Search */
 searchInput.addEventListener("input", () => {
   const value = searchInput.value.toLowerCase();
   const filtered = allProducts.filter(p =>
