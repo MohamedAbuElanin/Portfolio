@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>إنشاء حساب - SIA – حكمة قديمة لمسارات مهنية حديثة</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <link rel="stylesheet" href="signup.css" />
+        <link rel="stylesheet" href="../template.css" />
+        <link
+            rel="icon"
+            type="../Images/ICO/favicon.ico"
+            href="../Images/ICO/favicon.ico"
+        />
+    </head>
+    <body>
+        <!-- Navbar Start -->
+        <header class="site-header">
+            <nav class="site-nav" aria-label="Primary navigation">
+                <input
+                    type="checkbox"
+                    id="navToggle"
+                    class="nav-toggle"
+                    aria-label="Toggle navigation menu"
+                />
+
+                <!-- Logo Section -->
+                <a href="../index.html" class="brand" aria-label="SIA homepage">
+                    <span class="brand__mark">
+                        <img
+                            src="../Images/Logo/SIA +Ra's Eye, yellow color.svg"
+                            alt="شعار SIA الذهبي"
+                        />
+                    </span>
+                </a>
+
+                <!-- Center Navigation Links -->
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../index.html">الرئيسية</a></li>
+                    <li><a href="../About/About.html">عن المنصة</a></li>
+                    <li><a href="../Test/Test.html">الاختبار</a></li>
+                    <li><a href="../profile/profile.html">الملف الشخصي</a></li>
+                    <li>
+                        <a href="../privacy-terms.html">الخصوصية والشروط</a>
+                    </li>
+                </ul>
+
+                <!-- Right Buttons Section -->
+                <div class="nav-auth" id="navAuth">
+                    <a
+                        href="../sign in/signin.html"
+                        class="btn-nav btn-nav--signin"
+                        >تسجيل الدخول</a
+                    >
+                    <a href="./signup.html" class="btn-nav btn-nav--signup"
+                        >إنشاء حساب</a
+                    >
+                </div>
+
+                <!-- Responsive Menu (Hamburger control + label for accessibility) -->
+                <label
+                    for="navToggle"
+                    class="hamburger"
+                    aria-label="Open navigation menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <!-- Responsive Menu -->
+                <div class="nav-drawer" aria-hidden="true">
+                    <!-- Center Navigation Links duplicated for the mobile drawer -->
+                    <ul class="drawer-links">
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="../About/About.html">عن المنصة</a></li>
+                        <li><a href="../Test/Test.html">الاختبار</a></li>
+                        <li>
+                            <a href="../profile/profile.html">الملف الشخصي</a>
+                        </li>
+                        <li>
+                            <a href="../privacy-terms.html">الخصوصية والشروط</a>
+                        </li>
+                    </ul>
+                    <!-- Right Buttons Section duplicated for stacked layout -->
+                    <div class="drawer-auth">
+                        <a
+                            href="../sign in/signin.html"
+                            class="btn-nav btn-nav--signin"
+                            >تسجيل الدخول</a
+                        >
+                        <a href="./signup.html" class="btn-nav btn-nav--signup"
+                            >إنشاء حساب</a
+                        >
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main style="padding-top: 80px">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="container">
+                    <div class="hero-content fade-in">
+                        <h1 class="hero-title">مرحباً بك!</h1>
+                        <p class="hero-subtitle">
+                            يرجى تسجيل الدخول أو إنشاء حساب لمتابعة رحلتك مع
+                            SIA.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sign Up Form Section -->
+            <section class="form-section">
+                <div class="container">
+                    <div class="form-wrapper fade-in" id="signUpForm">
+                        <div class="form-header">
+                            <h2 class="form-title">
+                                <i class="fas fa-user-plus"></i>
+                                <span>إنشاء حساب</span>
+                            </h2>
+                        </div>
+
+                        <form id="signUpFormElement" class="auth-form">
+                            <div class="form-group">
+                                <label for="fullName" class="form-label">
+                                    <i class="fas fa-user"></i>
+                                    <span>الاسم الكامل</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    name="fullName"
+                                    class="form-input"
+                                    placeholder="أدخل اسمك الكامل"
+                                    required
+                                />
+                                <span
+                                    class="error-message"
+                                    id="fullNameError"
+                                ></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>البريد الإلكتروني</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    class="form-input"
+                                    placeholder="أدخل بريدك الإلكتروني"
+                                    required
+                                />
+                                <span
+                                    class="error-message"
+                                    id="emailError"
+                                ></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password" class="form-label">
+                                    <i class="fas fa-lock"></i>
+                                    <span>كلمة المرور</span>
+                                </label>
+                                <div class="password-wrapper">
+                                    <input
+                                        type="password"
+                                        id="password"
+                                        name="password"
+                                        class="form-input"
+                                        placeholder="أنشئ كلمة مرور"
+                                        required
+                                    />
+                                    <button
+                                        type="button"
+                                        class="password-toggle"
+                                        id="passwordToggle"
+                                    >
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <span
+                                    class="error-message"
+                                    id="passwordError"
+                                ></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confirmPassword" class="form-label">
+                                    <i class="fas fa-lock"></i>
+                                    <span>تأكيد كلمة المرور</span>
+                                </label>
+                                <div class="password-wrapper">
+                                    <input
+                                        type="password"
+                                        id="confirmPassword"
+                                        name="confirmPassword"
+                                        class="form-input"
+                                        placeholder="أكد كلمة المرور"
+                                        required
+                                    />
+                                    <button
+                                        type="button"
+                                        class="password-toggle"
+                                        id="confirmPasswordToggle"
+                                    >
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <span
+                                    class="error-message"
+                                    id="confirmPasswordError"
+                                ></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dateOfBirth" class="form-label">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>تاريخ الميلاد</span>
+                                </label>
+                                <input
+                                    type="date"
+                                    id="dateOfBirth"
+                                    name="dateOfBirth"
+                                    class="form-input"
+                                    required
+                                />
+                                <span
+                                    class="error-message"
+                                    id="dateOfBirthError"
+                                ></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="gender" class="form-label">
+                                    <i class="fas fa-venus-mars"></i>
+                                    <span>الجنس</span>
+                                </label>
+                                <select
+                                    id="gender"
+                                    name="gender"
+                                    class="form-select"
+                                    required
+                                >
+                                    <option value="">اختر الجنس</option>
+                                    <option value="male">ذكر</option>
+                                    <option value="female">أنثى</option>
+                                </select>
+                                <span
+                                    class="error-message"
+                                    id="genderError"
+                                ></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="education" class="form-label">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>المستوى التعليمي</span>
+                                </label>
+                                <select
+                                    id="education"
+                                    name="education"
+                                    class="form-select"
+                                    required
+                                >
+                                    <option value="">
+                                        اختر المستوى التعليمي
+                                    </option>
+                                    <option value="high-school">
+                                        ثانوية عامة
+                                    </option>
+                                    <option value="diploma">دبلوم</option>
+                                    <option value="bachelor">بكالوريوس</option>
+                                    <option value="master">ماجستير</option>
+                                    <option value="phd">دكتوراه</option>
+                                    <option value="other">آخر</option>
+                                </select>
+                                <div
+                                    class="education-other-wrapper"
+                                    id="educationOtherWrapper"
+                                    style="display: none"
+                                >
+                                    <input
+                                        type="text"
+                                        id="educationOther"
+                                        name="educationOther"
+                                        class="form-input"
+                                        placeholder="يرجى التحديد"
+                                        style="margin-top: 1rem"
+                                    />
+                                </div>
+                                <span
+                                    class="error-message"
+                                    id="educationError"
+                                ></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="studentStatus" class="form-label">
+                                    <i class="fas fa-user-graduate"></i>
+                                    <span>حالة الطالب</span>
+                                </label>
+                                <select
+                                    id="studentStatus"
+                                    name="studentStatus"
+                                    class="form-select"
+                                    required
+                                >
+                                    <option value="">اختر الحالة</option>
+                                    <option value="student">طالب</option>
+                                    <option value="graduate">خريج</option>
+                                </select>
+                                <span
+                                    class="error-message"
+                                    id="studentStatusError"
+                                ></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input
+                                        type="checkbox"
+                                        id="agreeTerms"
+                                        required
+                                    />
+                                    <span
+                                        >أوافق على
+                                        <a
+                                            href="../privacy-terms.html"
+                                            target="_blank"
+                                            class="terms-link"
+                                            >سياسة الخصوصية وشروط الاستخدام</a
+                                        ></span
+                                    >
+                                </label>
+                                <span
+                                    class="error-message"
+                                    id="agreeTermsError"
+                                ></span>
+                            </div>
+
+                            <div class="form-error" id="signUpFormError"></div>
+
+                            <button type="submit" class="form-btn">
+                                <i class="fas fa-user-plus"></i>
+                                <span>إنشاء حساب</span>
+                            </button>
+
+                            <!-- Social Login -->
+                            <div class="social-divider">
+                                <span>أو</span>
+                            </div>
+
+                            <div class="social-buttons">
+                                <button
+                                    type="button"
+                                    class="social-btn google-btn"
+                                >
+                                    <i class="fab fa-google"></i>
+                                    <span>إنشاء حساب بـ Google</span>
+                                </button>
+                            </div>
+                        </form>
+
+                        <div class="form-footer">
+                            <p>
+                                <span>لديك حساب بالفعل؟</span>
+                                <a
+                                    href="../sign in/signin.html"
+                                    class="toggle-link"
+                                    >تسجيل الدخول</a
+                                >
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer__brand">
+                <img
+                    src="../Images/Logo/R'eye only in yellow color.svg"
+                    alt="أيقونة عين رع SIA"
+                    class="footer__logo"
+                />
+                <div>
+                    <p class="footer__title">SIA</p>
+                    <p class="footer__mission">
+                        نربط الحكمة القديمة بمسارات المهن الحديثة.
+                    </p>
+                </div>
+            </div>
+            <div class="footer__nav" aria-label="Footer navigation">
+                <a href="../index.html">الرئيسية</a>
+                <a href="../About/About.html">عن SIA</a>
+                <a href="../Test/Test.html">الاختبار</a>
+                <a href="../profile/profile.html">الملف الشخصي</a>
+                <a href="../privacy-terms.html">الخصوصية والشروط</a>
+            </div>
+            <!-- Social Media Icons -->
+            <div class="footer__social">
+                <a
+                    href="https://www.instagram.com/mohamedosman.mo189/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    class="social-icon"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                    href="https://www.facebook.com/mohamed.othman.abu.el.enein/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    class="social-icon"
+                >
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a
+                    href="https://www.threads.com/@mohamedosman.mo189"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="threads"
+                    class="social-icon"
+                >
+                    <i class="fab fa-threads"></i>
+                </a>
+                <a
+                    href="https://wa.me/201210146694"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp"
+                    class="social-icon"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a
+                    href="mailto:medsmohamed910@gmail.com"
+                    aria-label="Email"
+                    class="social-icon"
+                >
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="footer__copy">
+                <p>&copy; 2026 SIA. All rights reserved.</p>
+                <p class="footer__motto">
+                    Ancient Wisdom for Modern Career Paths
+                </p>
+            </div>
+        </footer>
+
+        <canvas id="particles"></canvas>
+
+        <!-- Firebase SDK - Modular SDK (v9+) -->
+        <script type="module" src="../firebase-config.js"></script>
+        <script type="module" src="../auth-state.js"></script>
+
+        <!-- Sign Up Script -->
+        <script type="module" src="signup.js"></script>
+    </body>
+</html>

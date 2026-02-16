@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SIA - الاختبار</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="stylesheet" href="../template.css" />
+        <link rel="stylesheet" href="Test.css" />
+        <link
+            rel="icon"
+            type="../Images/ICO/favicon.ico"
+            href="../Images/ICO/favicon.ico"
+        />
+    </head>
+    <body>
+        <!-- Navbar Start -->
+        <header class="site-header">
+            <nav class="site-nav" aria-label="Primary navigation">
+                <input
+                    type="checkbox"
+                    id="navToggle"
+                    class="nav-toggle"
+                    aria-label="Toggle navigation menu"
+                />
+
+                <!-- Logo Section -->
+                <a href="../index.html" class="brand" aria-label="SIA homepage">
+                    <span class="brand__mark">
+                        <img
+                            src="../Images/Logo/SIA +Ra's Eye, yellow color.svg"
+                            alt="شعار SIA الذهبي"
+                        />
+                    </span>
+                </a>
+
+                <!-- Center Navigation Links -->
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../index.html">الرئيسية</a></li>
+                    <li><a href="../About/About.html">عن المنصة</a></li>
+                    <li>
+                        <a href="Test.html" aria-current="page">الاختبار</a>
+                    </li>
+                    <li><a href="../profile/profile.html">الملف الشخصي</a></li>
+                    <li>
+                        <a href="../privacy-terms.html">الخصوصية والشروط</a>
+                    </li>
+                </ul>
+
+                <!-- Right Buttons Section -->
+                <div class="nav-auth" id="navAuth">
+                    <!-- Injected by auth.js -->
+                </div>
+
+                <!-- Responsive Menu (Hamburger control) -->
+                <label
+                    for="navToggle"
+                    class="hamburger"
+                    aria-label="Open navigation menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <!-- Responsive Menu -->
+                <div class="nav-drawer" aria-hidden="true">
+                    <ul class="drawer-links">
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="../About/About.html">عن المنصة</a></li>
+                        <li>
+                            <a href="Test.html" aria-current="page">الاختبار</a>
+                        </li>
+                        <li>
+                            <a href="../profile/profile.html">الملف الشخصي</a>
+                        </li>
+                        <li>
+                            <a href="../privacy-terms.html">الخصوصية والشروط</a>
+                        </li>
+                    </ul>
+                    <!-- Drawer Auth Buttons -->
+                    <div class="drawer-auth">
+                        <!-- Injected by auth.js -->
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="test-page">
+            <h1 class="page-title">تقييم الشخصية</h1>
+
+            <!-- 1. Selection View -->
+            <div id="selectionView" class="test-section active">
+                <div class="test-cards-container">
+                    <!-- Big Five Card -->
+                    <div class="test-card" data-test="Big-Five">
+                        <div class="card-image">
+                            <img
+                                src="../Images/Test/Big Five.svg"
+                                alt="اختبار السمات الخمس الكبرى"
+                            />
+                        </div>
+                        <h2 class="card-title">اختبار السمات الخمس الكبرى</h2>
+                        <p class="card-desc">
+                            افهم سمات شخصيتك بناءً على نموذج العوامل الخمسة:
+                            الانفتاح، الضمير، الانبساط، المقبولية، و العصابية.
+                        </p>
+                        <button class="btn-start">بدء الاختبار</button>
+                    </div>
+
+                    <!-- Holland Codes Card -->
+                    <div class="test-card" data-test="Holland-codes">
+                        <div class="card-image">
+                            <img
+                                src="../Images/Test/Holland codes.svg"
+                                alt="اختبار أكواد هولاند"
+                            />
+                        </div>
+                        <h2 class="card-title">أكواد هولاند</h2>
+                        <p class="card-desc">
+                            اكتشف اهتماماتك المهنية وبيئات العمل المثالية بناءً
+                            على نموذج RIASEC: الواقعي، الاستقصائي، الفني،
+                            الاجتماعي، المقدام، والتقليدي.
+                        </p>
+                        <button class="btn-start">بدء الاختبار</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Test View -->
+            <div id="testView" class="test-section hidden">
+                <div class="test-header">
+                    <div class="progress-container">
+                        <div class="progress-text">
+                            <span>السؤال</span>
+                            <span id="currentQuestionNum">1</span>
+                            <span>من</span>
+                            <span id="totalQuestions">30</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div
+                                id="progressBar"
+                                class="progress-bar-fill"
+                            ></div>
+                        </div>
+                    </div>
+                    <div class="timer-container">
+                        <span class="timer-icon"
+                            ><i class="far fa-clock"></i
+                        ></span>
+                        <span id="timerDisplay">00:00</span>
+                    </div>
+                </div>
+
+                <div id="questionContainer" class="question-container">
+                    <h2 id="questionText" class="question-text">
+                        نص السؤال يظهر هنا...
+                    </h2>
+                    <div id="optionsContainer" class="options-container">
+                        <!-- Options will be injected here -->
+                    </div>
+                </div>
+
+                <div class="test-controls">
+                    <button id="prevBtn" class="btn-control btn-prev" disabled>
+                        السابق
+                    </button>
+                    <button
+                        id="nextBtn"
+                        class="btn-control btn-next"
+                        style="display: none"
+                    >
+                        التالي
+                    </button>
+                </div>
+            </div>
+
+            <!-- 3. Result View -->
+            <div id="resultView" class="test-section hidden">
+                <div class="completion-card">
+                    <div class="completion-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h1>اكتمل الاختبار!</h1>
+                    <p>لقد أجبت على جميع الأسئلة.</p>
+
+                    <div class="time-stat">
+                        <span>الوقت الإجمالي:</span>
+                        <span id="finalTime">00:00</span>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="reviewBtn" class="btn-secondary">
+                            مراجعة الإجابات
+                        </button>
+                        <button id="finishBtn" class="btn-primary">
+                            إنهاء وحفظ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer__brand">
+                <img
+                    src="../Images/Logo/R'eye only in yellow color.svg"
+                    alt="أيقونة عين رع SIA"
+                    class="footer__logo"
+                />
+                <div>
+                    <p class="footer__title">SIA</p>
+                    <p class="footer__mission">
+                        نربط الحكمة القديمة بمسارات المهن الحديثة.
+                    </p>
+                </div>
+            </div>
+            <div class="footer__nav" aria-label="Footer navigation">
+                <a href="../index.html">الرئيسية</a>
+                <a href="../About/About.html">عن SIA</a>
+                <a href="Test.html">الاختبار</a>
+                <a href="../profile/profile.html">الملف الشخصي</a>
+                <a href="../privacy-terms.html">الخصوصية والشروط</a>
+            </div>
+            <!-- Social Media Icons -->
+            <div class="footer__social">
+                <a
+                    href="https://www.instagram.com/mohamedosman.mo189/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    class="social-icon"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                    href="https://www.facebook.com/mohamed.othman.abu.el.enein/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    class="social-icon"
+                >
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a
+                    href="https://www.threads.com/@mohamedosman.mo189"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="threads"
+                    class="social-icon"
+                >
+                    <i class="fab fa-threads"></i>
+                </a>
+                <a
+                    href="https://wa.me/201210146694"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp"
+                    class="social-icon"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a
+                    href="mailto:medsmohamed910@gmail.com"
+                    aria-label="Email"
+                    class="social-icon"
+                >
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="footer__copy">
+                <p>&copy; 2026 SIA. All rights reserved.</p>
+                <p class="footer__motto">
+                    Ancient Wisdom for Modern Career Paths
+                </p>
+            </div>
+        </footer>
+
+        <!-- Firebase SDK - Modular SDK (v9+) -->
+        <script type="module" src="../firebase-config.js"></script>
+        <script type="module" src="../auth-state.js"></script>
+        <script src="../auth-guard.js"></script>
+        <script type="module" src="../auth.js"></script>
+
+        <!-- Config -->
+        <script src="../config.js"></script>
+
+      <!-- 3. Result View -->
+      <div id="resultView" class="test-section hidden">
+        <div class="completion-card">
+          <div class="completion-icon">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <h1>اكتمل الاختبار!</h1>
+          <p>لقد أجبت على جميع الأسئلة.</p>
+
+          <div class="time-stat">
+            <span>الوقت الإجمالي:</span>
+            <span id="finalTime">00:00</span>
+          </div>
+
+          <div class="action-buttons">
+            <button id="reviewBtn" class="btn-secondary">مراجعة الإجابات</button>
+            <button id="finishBtn" class="btn-primary">إنهاء وحفظ</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Firebase SDK - Modular SDK (v9+) -->
+    <script type="module" src="../firebase-config.js"></script>
+    <script type="module" src="../auth-state.js"></script>
+    <script src="../auth-guard.js"></script>
+    <script type="module" src="../auth.js"></script>
+
+    <!-- Config -->
+    <script src="../config.js"></script>
+
+    <!-- Test Script -->
+    <script type="module" src="Test.js"></script>
+
+  </body>
+</html>

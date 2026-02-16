@@ -1,0 +1,845 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* Root tokens for color theme and typography */
+:root {
+    --sia-yellow: #fdd835;
+    --sia-black: #0b0b0c;
+    --sia-white: #ffffff;
+    --sia-gray: #1f1f23;
+    --font-primary: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-arabic: "Cairo", "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Global reset for consistent spacing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-arabic);
+    background-color: var(--sia-black);
+    color: var(--sia-white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* NAVBAR container */
+.site-header {
+    background-color: rgba(11, 11, 12, 0.92);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.site-nav {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 0 2rem;
+    min-height: 72px;
+}
+
+/* Logo styling */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    grid-column: 1;
+}
+
+.brand__mark {
+    display: inline-flex;
+    width: 72px;
+}
+
+.brand__mark img {
+    object-fit: contain;
+}
+
+/* Center nav links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.75rem;
+    grid-column: 2;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.nav-links a {
+    padding: 0.35rem 0;
+    font-weight: 600;
+    color: var(--sia-white);
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus,
+.nav-links a[aria-current="page"] {
+    color: var(--sia-yellow);
+}
+
+/* Right button styling */
+.nav-auth {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-right: 0.5rem;
+    grid-column: 3;
+    justify-content: flex-end;
+}
+
+.btn-nav {
+    border: 1px solid var(--sia-yellow);
+    color: var(--sia-yellow);
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.btn-nav--signup {
+    background-color: var(--sia-yellow);
+    color: var(--sia-black);
+}
+
+.btn-nav:hover,
+.btn-nav:focus {
+    background-color: var(--sia-yellow);
+    color: var(--sia-black);
+}
+
+/* Hamburger trigger hidden on desktop */
+.hamburger {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 4px;
+    margin-inline-start: auto; /* Logical property for RTL support */
+    flex-shrink: 0;
+    order: 3;
+}
+
+.hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--sia-white);
+}
+
+.nav-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Mobile responsive menu */
+.nav-drawer {
+    display: none;
+}
+
+.drawer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.drawer-links a {
+    font-weight: 600;
+    color: var(--sia-white);
+}
+
+.drawer-auth {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Placeholder main layout */
+.site-main {
+    flex: 1;
+    padding: 4rem 2rem;
+}
+
+.placeholder-section {
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    padding: 3rem;
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.placeholder-section h1 {
+    color: var(--sia-yellow);
+    margin-bottom: 1rem;
+}
+
+.placeholder-section p {
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.7;
+}
+
+/* Footer - Unified */
+.site-footer {
+    border-top: 1px solid rgba(212, 175, 55, 0.35);
+    padding: 2.5rem clamp(1.5rem, 6vw, 5rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.footer__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.footer__logo {
+    width: 48px;
+    filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.5));
+}
+
+.footer__title {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--sia-yellow);
+    letter-spacing: 0.1em;
+}
+
+.footer__mission {
+    margin: 0;
+    color: rgba(248, 246, 240, 0.75);
+}
+
+.footer__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 3.5rem;
+    justify-content: center;
+    font-size: 0.95rem;
+}
+
+.footer__nav a {
+    text-decoration: none;
+    color: rgba(248, 246, 240, 0.8);
+    transition: var(--transition);
+}
+
+.footer__nav a:hover {
+    color: var(--sia-yellow);
+}
+
+.footer__copy {
+    margin: 0;
+    color: rgba(248, 246, 240, 0.5);
+    font-size: 0.8rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+.footer__copy p {
+    margin: 0.3rem 0;
+}
+
+.footer__motto {
+    font-size: 0.75rem;
+    color: var(--sia-yellow);
+    opacity: 0.7;
+    margin-top: 0.5rem;
+}
+
+/* Social Media Icons */
+.footer__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.1);
+    color: rgba(248, 246, 240, 0.8);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.social-icon:hover {
+    background: rgba(212, 175, 55, 0.2);
+    color: var(--sia-yellow);
+    transform: translateY(-3px);
+    border-color: var(--sia-yellow);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.copyright {
+    color: #888888;
+    font-size: 14px;
+}
+
+/* Layout on mobile */
+/* Tablet responsive layout */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .site-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1.5rem;
+        min-height: 68px;
+    }
+
+    .hamburger {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        order: 1;
+        margin-right: 1rem;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: var(--sia-yellow);
+        transition: all 0.3s ease;
+        margin: 2px 0;
+    }
+
+    .brand {
+        flex: 1;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(11, 11, 12, 0.98);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-auth {
+        display: flex;
+        position: static;
+        background: transparent;
+        border: none;
+        padding: 0;
+        margin-left: auto;
+        order: 3;
+    }
+
+    .nav-drawer {
+        display: none;
+    }
+
+    .drawer-links {
+        display: none;
+    }
+
+    .drawer-auth {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile navbar - logo left, hamburger right */
+    .site-nav {
+        padding-inline: 1.25rem;
+        min-height: 64px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Hide desktop nav elements */
+    .nav-links,
+    .nav-auth {
+        display: none;
+    }
+
+    /* Hamburger styling */
+    .hamburger {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        z-index: 1100; /* Above drawer */
+        
+        /* Force Left Position */
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: var(--sia-yellow);
+        transition: all 0.3s ease;
+        margin: 2px 0;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Brand/Logo */
+    .brand {
+        flex: 1;
+        text-align: center;
+        padding: 0;
+        z-index: 1100; /* Above drawer */
+    }
+    
+    .brand__mark {
+        justify-content: center;
+        width: auto;
+    }
+
+    .brand__mark img {
+        height: 40px;
+        width: auto;
+    }
+
+    /* Mobile Drawer - The actual menu */
+    .nav-drawer {
+        display: block; /* It exists but hidden by opacity/visibility */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(11, 11, 12, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 6rem 2rem 2rem;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.3s ease-in-out;
+        overflow-y: auto;
+        display: flex; /* Flex layout for content */
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    /* Show drawer when checkbox is checked */
+    #navToggle:checked ~ .nav-drawer {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* Content inside drawer */
+    .drawer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .drawer-links a {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--sia-white);
+        display: block;
+        padding: 0.5rem;
+    }
+
+    .drawer-links a:hover,
+    .drawer-links a:focus {
+        color: var(--sia-yellow);
+    }
+
+    .drawer-auth {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .drawer-auth .btn-nav {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .site-footer {
+        padding: 3rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Layout on mobile */
+    .footer__nav {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .footer__brand {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .site-main {
+        padding: 3rem 1.25rem;
+    }
+
+    .site-nav {
+        min-height: 56px;
+        padding: 0 1rem;
+    }
+
+    .brand__mark {
+        width: 44px;
+    }
+
+    .hamburger {
+        width: 36px;
+        height: 36px;
+        padding: 6px;
+    }
+
+    .hamburger span {
+        width: 20px;
+        height: 2px;
+        margin: 1.5px 0;
+    }
+
+    .nav-links,
+    .nav-auth {
+        padding: 0.75rem;
+    }
+
+    .footer__social {
+        gap: 1rem;
+    }
+
+    .footer__social .social-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .site-nav {
+        min-height: 52px;
+        padding: 0 0.5rem;
+    }
+
+    .brand__mark {
+        width: 40px;
+    }
+
+    .hamburger {
+        width: 32px;
+        height: 32px;
+        padding: 4px;
+    }
+
+    .hamburger span {
+        width: 18px;
+        height: 2px;
+        margin: 1px 0;
+    }
+
+    .nav-links,
+    .nav-auth {
+        padding: 0.5rem;
+    }
+
+    .footer__social .social-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+
+    .site-footer {
+        padding: 1.5rem 0.75rem;
+    }
+}
+
+/* Language Dropdown Styles */
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.lang-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.lang-dropdown-toggle:hover {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.lang-dropdown-toggle i {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.lang-dropdown.active .lang-dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.lang-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    background: #1a1a1a;
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+    min-width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+[dir="rtl"] .lang-dropdown-menu {
+    right: auto;
+    left: 0;
+}
+
+.lang-dropdown.active .lang-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.lang-option:last-child {
+    border-bottom: none;
+}
+
+.lang-option:hover {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.lang-code {
+    font-size: 0.85rem;
+    color: #d4af37;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .lang-dropdown {
+        margin-right: 0.5rem;
+    }
+    /* RTL Layout Refinements */
+    body.rtl-mode .nav-links {
+        gap: 1.25rem;
+    }
+
+    body.rtl-mode .brand {
+        padding-left: 0;
+        padding-right: 0.5rem;
+    }
+
+    body.rtl-mode .nav-auth {
+        padding-right: 0;
+        padding-left: 0.5rem;
+    }
+
+    .lang-dropdown-toggle {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-nav {
+        min-height: 52px;
+        padding: 0 0.75rem;
+    }
+
+    .brand__mark {
+        width: 45px;
+    }
+
+    .hamburger {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hamburger span {
+        width: 18px;
+    }
+
+    .nav-drawer {
+        padding: 1rem;
+    }
+
+    .drawer-links {
+        gap: 0.5rem;
+    }
+
+    .drawer-auth {
+        gap: 0.5rem;
+    }
+
+    .btn-nav {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .footer__social .social-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .footer__nav {
+        font-size: 0.85rem;
+        gap: 0.5rem;
+    }
+
+    .footer__copy {
+        font-size: 0.75rem;
+    }
+
+    .footer__motto {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .site-nav {
+        min-height: 48px;
+        padding: 0 0.5rem;
+    }
+
+    .brand__mark {
+        width: 40px;
+    }
+
+    .hamburger {
+        width: 36px;
+        height: 36px;
+    }
+
+    .hamburger span {
+        width: 16px;
+    }
+
+    .footer__social .social-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+
+    .footer__nav {
+        font-size: 0.8rem;
+    }
+
+    .footer__copy {
+        font-size: 0.7rem;
+        padding-top: 1.5rem;
+    }
+
+    .footer__motto {
+        font-size: 0.65rem;
+    }
+}

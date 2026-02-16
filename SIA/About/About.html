@@ -1,0 +1,583 @@
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SIA | عن المنصة</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="./About.css" />
+        <link rel="stylesheet" href="../template.css" />
+        <link
+            rel="icon"
+            type="../Images/ICO/favicon.ico"
+            href="../Images/ICO/favicon.ico"
+        />
+    </head>
+    <body>
+        <canvas id="particles" aria-hidden="true"></canvas>
+        <div class="eye-parallax" aria-hidden="true">
+            <img
+                src="../Images/Logo/R'eye only in yellow color.svg"
+                alt="أيقونة عين رع SIA"
+                class="eye-parallax__image"
+            />
+        </div>
+
+        <!-- Navbar Start -->
+        <header class="site-header">
+            <nav class="site-nav" aria-label="Primary navigation">
+                <input
+                    type="checkbox"
+                    id="navToggle"
+                    class="nav-toggle"
+                    aria-label="Toggle navigation menu"
+                />
+
+                <!-- Logo Section -->
+                <a href="../index.html" class="brand" aria-label="SIA homepage">
+                    <span class="brand__mark">
+                        <img
+                            src="../Images/Logo/SIA +Ra's Eye, yellow color.svg"
+                            alt="شعار SIA الذهبي"
+                        />
+                    </span>
+                </a>
+
+                <!-- Center Navigation Links -->
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../index.html">الرئيسية</a></li>
+                    <li>
+                        <a href="./About.html" aria-current="page">عن SIA</a>
+                    </li>
+                    <li><a href="../Test/Test.html">الاختبار</a></li>
+                    <li><a href="../profile/profile.html">الملف الشخصي</a></li>
+                    <li>
+                        <a href="../privacy-terms.html">الخصوصية والشروط</a>
+                    </li>
+                </ul>
+
+                <!-- Right Buttons Section -->
+                <div class="nav-auth" id="navAuth">
+                    <a
+                        href="../sign in/signin.html"
+                        class="btn-nav btn-nav--signin"
+                        >تسجيل الدخول</a
+                    >
+                    <a
+                        href="../sign up/signup.html"
+                        class="btn-nav btn-nav--signup"
+                        >إنشاء حساب</a
+                    >
+                </div>
+
+                <!-- Responsive Menu (Hamburger control + label for accessibility) -->
+                <label
+                    for="navToggle"
+                    class="hamburger"
+                    aria-label="Open navigation menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <!-- Responsive Menu -->
+                <div class="nav-drawer" aria-hidden="true">
+                    <!-- Center Navigation Links duplicated for the mobile drawer -->
+                    <ul class="drawer-links">
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li>
+                            <a href="./About.html" aria-current="page"
+                                >عن SIA</a
+                            >
+                        </li>
+                        <li><a href="../Test/Test.html">الاختبار</a></li>
+                        <li>
+                            <a href="../profile/profile.html">الملف الشخصي</a>
+                        </li>
+                        <li>
+                            <a href="../privacy-terms.html">الخصوصية والشروط</a>
+                        </li>
+                    </ul>
+                    <!-- Right Buttons Section duplicated for stacked layout -->
+                    <div class="drawer-auth">
+                        <a
+                            href="../sign in/signin.html"
+                            class="btn-nav btn-nav--signin"
+                            >تسجيل الدخول</a
+                        >
+                        <a
+                            href="../sign up/signup.html"
+                            class="btn-nav btn-nav--signup"
+                            >إنشاء حساب</a
+                        >
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero" id="hero">
+                <div class="hero__content">
+                    <p class="eyebrow">
+                        <i class="fa-solid fa-eye"></i> توجيه قديم | بيانات
+                        حديثة
+                    </p>
+                    <h1>SIA — حكمة قديمة لمسارات مهنية حديثة</h1>
+                    <p class="hero__lead">
+                        في عالم سريع التغير، يمكن أن يكون اختيار المسار المهني
+                        صعباً. يمزج SIA بين الحكمة القديمة والتحليلات الحديثة
+                        لمساعدتك على اكتشاف نقاط قوتك واختيار المسار الصحيح.
+                    </p>
+                    <div class="hero__cta">
+                        <a href="#test-anchor" class="btn btn--gold" data-scroll
+                            >ابدأ الاختبار</a
+                        >
+                        <a
+                            href="#roadmap-anchor"
+                            class="btn btn--outline"
+                            data-scroll
+                            >استكشف خارطة الطريق</a
+                        >
+                    </div>
+                </div>
+            </section>
+
+            <section class="overview" aria-labelledby="overview-title">
+                <div class="section-heading">
+                    <p class="eyebrow">لمحة عن المشروع</p>
+                    <h2 id="overview-title">لماذا SIA؟</h2>
+                </div>
+                <p class="overview__text">
+                    يستخدم SIA سمات الشخصية الخمس الكبرى + أكواد هولاند، ويربط
+                    النتائج ببيانات سوق العمل، ويقدم توصيات تعلم مخصصة.
+                </p>
+                <div class="overview__grid">
+                    <article class="info-card">
+                        <h3>
+                            <i class="fa-solid fa-chart-line"></i> ماذا نفعل
+                        </h3>
+                        <ul>
+                            <li>
+                                نماذج التحليل النفسي المهيأة للمواهب الناشئة.
+                            </li>
+                            <li>
+                                قاعدة معرفية قائمة على الأبحاث تتماشى مع اتجاهات
+                                مصر والشرق الأوسط.
+                            </li>
+                            <li>منصة توجيه تربط الرؤى بالأفعال.</li>
+                        </ul>
+                    </article>
+                    <article class="info-card">
+                        <h3>
+                            <i class="fa-solid fa-compass"></i> كيف يعمل SIA
+                        </h3>
+                        <ol>
+                            <li>
+                                التقييمات: سمات الشخصية الخمس الكبرى + أكواد
+                                هولاند مع محفزات سياقية.
+                            </li>
+                            <li>
+                                محرك الرؤى: يربط الدرجات ببيانات الوظائف
+                                المباشرة واحتياجات المواهب.
+                            </li>
+                            <li>
+                                خطة العمل: مسارات تعلم مخصصة وتوجيه لخارطة
+                                الطريق.
+                            </li>
+                        </ol>
+                    </article>
+                    <article class="info-card">
+                        <h3>
+                            <i class="fa-solid fa-bullseye"></i> الرؤية والرسالة
+                        </h3>
+                        <p>
+                            <strong>الرؤية:</strong> جعل الوضوح المهني متاحاً من
+                            خلال الحكمة الخالدة والذكاء الحديث.
+                        </p>
+                        <p>
+                            <strong>الرسالة:</strong> تجهيز كل متعلم بتوجيه مهني
+                            واعٍ ثقافياً، بيانات قابلة للتنفيذ، وقصص ملهمة.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section
+                class="roadmap"
+                id="roadmap-anchor"
+                aria-labelledby="roadmap-title"
+            >
+                <div class="section-heading">
+                    <p class="eyebrow">من الرؤية إلى العمل</p>
+                    <h2 id="roadmap-title">خارطة طريق SIA</h2>
+                </div>
+                <div class="roadmap__content">
+                    <p>
+                        رحلتك مع SIA تبدأ باكتشاف الذات وتؤدي إلى توجيه مهني
+                        قابل للتنفيذ. إليك كيف نحول الرؤى إلى مسار مهني مخصص لك:
+                    </p>
+                    <div class="overview__grid">
+                        <article class="info-card">
+                            <h3>
+                                <i class="fa-solid fa-clipboard-question"></i>
+                                الخطوة 1: التقييم
+                            </h3>
+                            <p>
+                                خذ اختباراتنا النفسية الشاملة التي تجمع بين سمات
+                                الشخصية الخمس الكبرى وأكواد هولاند لفهم ملفك
+                                الشخصي الفريد.
+                            </p>
+                        </article>
+                        <article class="info-card">
+                            <h3>
+                                <i class="fa-solid fa-chart-bar"></i> الخطوة 2:
+                                التحليل
+                            </h3>
+                            <p>
+                                يقوم محرك الرؤى الخاص بنا بربط نتائجك ببيانات
+                                سوق العمل الحقيقية، لتحديد الوظائف التي تتماشى
+                                مع شخصيتك واهتماماتك.
+                            </p>
+                        </article>
+                        <article class="info-card">
+                            <h3>
+                                <i class="fa-solid fa-route"></i> الخطوة 3:
+                                خارطة الطريق
+                            </h3>
+                            <p>
+                                احصل على مسار تعلم مخصص مع دورات موصى بها،
+                                مهارات لتطويرها، ومصادر مصممة خصيصاً لأهدافك
+                                المهنية.
+                            </p>
+                        </article>
+                        <article class="info-card">
+                            <h3>
+                                <i class="fa-solid fa-rocket"></i> الخطوة 4:
+                                التنفيذ
+                            </h3>
+                            <p>
+                                ابدأ رحلتك مع قنوات يوتيوب، كتب، مقالات، ودورات
+                                مختارة مصممة لمساعدتك على النجاح في المجال الذي
+                                اخترته.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="roadmap__cta">
+                        <a href="../Test/Test.html" class="link-pill">
+                            <i class="fa-solid fa-play"></i> ابدأ رحلتك
+                        </a>
+                        <a href="../profile/profile.html" class="link-pill">
+                            <i class="fa-solid fa-user"></i> عرض ملفك الشخصي
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="team" id="team" aria-labelledby="team-title">
+                <div class="section-heading">
+                    <p class="eyebrow">تعرف على الفريق</p>
+                    <h2 id="team-title">الذكاء البشري وراء SIA</h2>
+                </div>
+                <div class="mosaic-toolbar">
+                    <button
+                        type="button"
+                        class="mosaic-toggle"
+                        aria-pressed="false"
+                    >
+                        <i class="fa-solid fa-layer-group"></i>
+                        <span>التبديل إلى عرض البطاقات</span>
+                    </button>
+                </div>
+                <div class="mosaic" role="list">
+                    <!-- Center Card -->
+                    <article
+                        class="team-card team-card--leader reveal"
+                        role="listitem"
+                    >
+                        <div class="team-photo">
+                            <img
+                                src="../Images/Team/Mohamed Osman.jpeg"
+                                alt="صورة محمد عثمان"
+                                data-initials="MO"
+                            />
+                        </div>
+                        <div class="team-info">
+                            <h3>محمد عثمان</h3>
+                            <p class="team-role">
+                                قائد المشروع ومطور Full-Stack
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal" role="listitem">
+                        <div class="team-photo">
+                            <img
+                                src="../Images/Team/Hesham Khaled.jpeg"
+                                alt="صورة هشام خالد"
+                                data-initials="HK"
+                            />
+                        </div>
+                        <div class="team-info">
+                            <h3>هشام خالد</h3>
+                            <p class="team-role">البحث والبيانات</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal" role="listitem">
+                        <div class="team-photo">
+                            <img
+                                src="../Images/Team/Abdul Rahman Tariq.jpg"
+                                alt="صورة عبد الرحمن طارق"
+                                data-initials="AT"
+                            />
+                        </div>
+                        <div class="team-info">
+                            <h3>عبد الرحمن طارق</h3>
+                            <p class="team-role">البحث والبيانات</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal" role="listitem">
+                        <div class="team-photo">
+                            <img
+                                src="../Images/Team/Mohamed Adel.jpg"
+                                alt="صورة محمد عادل"
+                                data-initials="MA"
+                            />
+                        </div>
+                        <div class="team-info">
+                            <h3>محمد عادل</h3>
+                            <p class="team-role">المحتوى</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal" role="listitem">
+                        <div class="team-photo">
+                            <img
+                                src="../Images/Team/Riham Mohamed.jpeg"
+                                alt="صورة ريهام محمد"
+                                data-initials="RM"
+                            />
+                        </div>
+                        <div class="team-info">
+                            <h3>ريهام محمد</h3>
+                            <p class="team-role">البحث والبيانات</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal" role="listitem">
+                        <div class="team-photo">
+                            <img
+                                src="../Images/Team/Doaa Bahaa.jpeg"
+                                alt="صورة دعاء بهاء"
+                                data-initials="DB"
+                            />
+                        </div>
+                        <div class="team-info">
+                            <h3>دعاء بهاء</h3>
+                            <p class="team-role">البحث والبيانات</p>
+                        </div>
+                    </article>
+
+                    <!-- Surrounding Cards -->
+                    <article class="team-card reveal" role="listitem">
+                        <div class="team-photo">
+                            <img
+                                src="../Images/Team/Wafaa Mostafa.jpeg"
+                                alt="صورة وفاء مصطفى"
+                                data-initials="WM"
+                            />
+                        </div>
+                        <div class="team-info">
+                            <h3>وفاء مصطفى</h3>
+                            <p class="team-role">Front-End</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal" role="listitem">
+                        <div class="team-photo">
+                            <img
+                                src="../Images/Team/Ahmed Elzeer .jpeg"
+                                alt="صورة أحمد الزير"
+                                data-initials="AE"
+                            />
+                        </div>
+                        <div class="team-info">
+                            <h3>أحمد الزير</h3>
+                            <p class="team-role">البحث والتوثيق</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal" role="listitem">
+                        <div class="team-photo">
+                            <img
+                                src="../Images/Team/Karim Ragab.jpg"
+                                alt="صورة كريم رجب"
+                                data-initials="KR"
+                            />
+                        </div>
+                        <div class="team-info">
+                            <h3>كريم رجب</h3>
+                            <p class="team-role">نظم البيانات</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal" role="listitem">
+                        <div class="team-photo">
+                            <img
+                                src="../Images/Team/Esraa.jpeg"
+                                alt="صورة إسراء"
+                                data-initials="E"
+                            />
+                        </div>
+                        <div class="team-info">
+                            <h3>إسراء حسين</h3>
+                            <p class="team-role">نظم المعرفة</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal" role="listitem">
+                        <div class="team-photo">
+                            <img
+                                src="../Images/Team/Youssef Mohammed.jpg"
+                                alt="صورة يوسف محمد"
+                                data-initials="YM"
+                            />
+                        </div>
+                        <div class="team-info">
+                            <h3>يوسف محمد</h3>
+                            <p class="team-role">العرض والتوثيق</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal" role="listitem">
+                        <div class="team-photo">
+                            <img
+                                src="../Images/Team/Mahmoud Saif.jpeg"
+                                alt="صورة محمود سيف"
+                                data-initials="MS"
+                            />
+                        </div>
+                        <div class="team-info">
+                            <h3>محمود سيف</h3>
+                            <p class="team-role">Back-End</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section
+                class="contact"
+                id="contact"
+                aria-labelledby="contact-title"
+            >
+                <div class="section-heading">
+                    <p class="eyebrow">ابقَ على اتصال</p>
+                    <h2 id="contact-title">اتصل بفريق SIA</h2>
+                </div>
+                <div class="contact__card">
+                    <p>
+                        هل لديك فكرة شراكة أو ترغب في الوصول المبكر إلى خارطة
+                        الطريق؟ راسلنا عبر البريد الإلكتروني وسنقوم بالرد خلال
+                        يومي عمل.
+                    </p>
+                    <a href="mailto:SIA@gmail.com" class="contact__email">
+                        <i class="fa-solid fa-envelope"></i> SIA@gmail.com
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer__brand">
+                <img
+                    src="../Images/Logo/R'eye only in yellow color.svg"
+                    alt="أيقونة عين رع SIA"
+                    class="footer__logo"
+                />
+                <div>
+                    <p class="footer__title">SIA</p>
+                    <p class="footer__mission">
+                        نربط الحكمة القديمة بمسارات المهن الحديثة.
+                    </p>
+                </div>
+            </div>
+            <div class="footer__nav" aria-label="Footer navigation">
+                <a href="../index.html">الرئيسية</a>
+                <a href="./About.html">عن SIA</a>
+                <a href="../Test/Test.html">الاختبار</a>
+                <a href="../profile/profile.html">الملف الشخصي</a>
+                <a href="../privacy-terms.html">الخصوصية والشروط</a>
+            </div>
+            <!-- Social Media Icons -->
+            <div class="footer__social">
+                <a
+                    href="https://www.instagram.com/mohamedosman.mo189/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    class="social-icon"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                    href="https://www.facebook.com/mohamed.othman.abu.el.enein/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    class="social-icon"
+                >
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a
+                    href="https://www.threads.com/@mohamedosman.mo189"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="threads"
+                    class="social-icon"
+                >
+                    <i class="fab fa-threads"></i>
+                </a>
+                <a
+                    href="https://wa.me/201210146694"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp"
+                    class="social-icon"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a
+                    href="mailto:medsmohamed910@gmail.com"
+                    aria-label="Email"
+                    class="social-icon"
+                >
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="footer__copy">
+                <p>&copy; 2026 SIA. All rights reserved.</p>
+                <p class="footer__motto">
+                    Ancient Wisdom for Modern Career Paths
+                </p>
+            </div>
+        </footer>
+
+        <!-- Firebase SDK - Modular SDK (v9+) -->
+        <script type="module" src="../firebase-config.js"></script>
+        <script type="module" src="../auth-state.js"></script>
+        <script type="module" src="../auth.js"></script>
+        <script src="./About.js" defer></script>
+    </body>
+</html>

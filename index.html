@@ -6,9 +6,20 @@
     <title>Portfolio Mohamed</title>
     <meta name="description" content="Portfolio of Mohamed Osman Abu Al-enin — Full-Stack Developer & Designer">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./global.css">
+    
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PLACEHOLDER');
+    </script>
 </head>
 <body>
+    <canvas id="particles-canvas"></canvas>
+    <canvas id="matrix-canvas"></canvas>
     <div id="preloader" class="preloader" aria-hidden="true">
     <div class="spinner">
         <div class="dot"></div>
@@ -26,15 +37,17 @@
         <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
     </nav>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">
+        <i class="fas fa-moon"></i>
+    </button>
     <button class="menu-toggle" aria-hidden="true">☰</button>
     </header>
     <main>
     <section id="home" class="hero">
         <div class="hero-inner">
-        <h1 class="title neon">Hi — I’m Mohamed Osman Abu Al-enin</h1>
-        <p class="subtitle neon-accent">Full-Stack Developer &amp; Designer</p>
+        <h1 class="typing" data-text="Hi, I'm Mohamed Osman Abu Al-enin | Front-End Developer"></h1>
         <div class="neon-statement-wrap">
-            <p class="neon-statement">Full-Stack Developer | UI/UX Designer | Node.js Developer | Linux User | Cybersecurity Enthusiast.</p>
+            <p class="neon-statement">Front-End Developer &amp; Logo Designer</p>
         </div>
         <div class="hero-ctas">
             <a class="btn primary" href="./projects.html">View Projects</a>
@@ -47,6 +60,30 @@
         <div class="blob b3"></div>
         </div>
     </section>
+
+    <!-- --- STATS SECTION --- -->
+    <section class="section stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item glass-card tilt-item" title="Click to recount">
+                    <span class="stat-number" data-target="15">0</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item glass-card tilt-item" title="Click to recount">
+                    <span class="stat-number" data-target="8">0</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-item glass-card tilt-item" title="Click to recount">
+                    <span class="stat-number" data-target="2" id="exp-stat">2</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item glass-card tilt-item" title="Click to recount">
+                    <span class="stat-number" data-target="6">0</span>
+                    <span class="stat-label">Certificates</span>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="about" class="section about">
         <div class="container grid about-grid">
         <div class="photo-card">
@@ -56,9 +93,15 @@
         </div>
         <div class="bio">
             <h2>About Me</h2>
-            <p>I’m Mohamed Osman Abu Al-enin — a Full-Stack Developer & Designer focused on building fast, responsive and accessible web applications. I combine design thinking with engineering practices to create maintainable solutions and delightful user interfaces.</p>
+            <p>I’m Mohamed Osman Abu Al-enin — a Front end Developer & Logo Designer focused on building fast, responsive and accessible web applications. I combine design thinking with engineering practices to create maintainable solutions and delightful user interfaces.</p>
             <p>I work across front-end and back-end technologies, use Linux daily, and have practical exposure to security tools and practices.</p>
-            <h3>Quick skills snapshot</h3>
+            
+            <div class="philosophy-box glass-card" style="margin-top: 24px;">
+                <h3 style="color: var(--neon-green); font-size: 18px;">My Philosophy</h3>
+                <p style="font-style: italic; font-size: 14px; margin-bottom: 0;">"Code is not just logic; it's an art form. I build for the user, ensuring every pixel serves a purpose and every interaction feels like magic."</p>
+            </div>
+
+            <h3 style="margin-top: 24px;">Quick skills snapshot</h3>
             <div class="skill">
             <label>HTML</label>
             <div class="bar"><div class="fill html" style="width:92%"></div></div>
@@ -116,65 +159,196 @@
             <label for="tab-design" class="tab">Design</label>
             <input type="radio" name="proj" id="tab-dev">
             <label for="tab-dev" class="tab">Development</label>
+            <input type="radio" name="proj" id="tab-github">
+            <label for="tab-github" class="tab">GitHub Repos</label>
             <div class="tab-panels">
             <div class="panel panel-design">
                 <div class="projects-grid">
+                <!-- Design projects ... -->
+                </div>
+            </div>
+            <div class="panel panel-dev">
+                <!-- Dev projects ... -->
+            </div>
+            <div class="panel panel-github">
+                <div id="github-repos-container" class="projects-grid">
+                    <div class="loading-message" style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">
+                        <i class="fas fa-spinner fa-spin" style="font-size: 24px; margin-bottom: 10px;"></i>
+                        <p>Fetching repositories from GitHub...</p>
+                    </div>
+                </div>
+            </div>
                 <article class="proj-card">
-                    <img class="proj-img" src="./Screenshot 2025-08-03 032306.png" alt="Logo projects">
-                    <h4>Logo & Brand Design</h4>
-                    <p>Custom logo systems and visual identity for startups and products. (Example images show mark, color palette and usage.)</p>
-                    <a class="btn small" href="#">View Project</a>
+                    <div class="proj-img-wrap">
+                        <img class="proj-img" src="./Screenshot 2025-08-03 032306.png" alt="Logo projects">
+                    </div>
+                    <div class="proj-content">
+                        <h4>Logo & Brand Design</h4>
+                        <p>Custom logo systems and visual identity for startups and products. (Example images show mark, color palette and usage.)</p>
+                        <div class="btn-group">
+                            <a class="btn small" href="#">View Project</a>
+                        </div>
+                    </div>
                 </article>
                 <article class="proj-card">
-                    <img class="proj-img" src="./web.png" alt="Website design">
-                    <h4>Website Design</h4>
-                    <p>High-fidelity web mockups and UI kits optimized for conversion and accessibility.</p>
-                    <a class="btn small" href="#">View Project</a>
+                    <div class="proj-img-wrap">
+                        <img class="proj-img" src="./web.png" alt="Website design">
+                    </div>
+                    <div class="proj-content">
+                        <h4>Website Design</h4>
+                        <p>High-fidelity web mockups and UI kits optimized for conversion and accessibility.</p>
+                        <div class="btn-group">
+                            <a class="btn small" href="#">View Project</a>
+                        </div>
+                    </div>
                 </article>
                 </div>
             </div>
             <div class="panel panel-dev">
                 <div class="projects-grid">
                 <article class="proj-card">
-                    <img class="proj-img" src="./hero.avif" alt="Linux setup">
-                    <h4>Advanced Linux Setup</h4>
-                    <p>System configuration, hardening and automation for servers and development environments.</p>
-                    <a class="btn small" href="#">View Project</a>
+                    <div class="proj-img-wrap">
+                        <img class="proj-img" src="./hero.avif" alt="Linux setup">
+                    </div>
+                    <div class="proj-content">
+                        <h4>Advanced Linux Setup</h4>
+                        <p>System configuration, hardening and automation for servers and development environments.</p>
+                        <div class="tech-stack">
+                            <i class="fab fa-linux" title="Linux"></i>
+                            <i class="fas fa-terminal" title="Bash"></i>
+                            <i class="fab fa-docker" title="Docker"></i>
+                        </div>
+                        <div class="btn-group">
+                            <a class="btn small" href="#">View Project</a>
+                        </div>
+                    </div>
                 </article>
                 <article class="proj-card">
-                    <img class="proj-img" src="./0575.jpg" alt="Nmap data">
-                    <h4>Nmap Recon & Data Collection</h4>
-                    <p>Network reconnaissance projects and structured data collection for security assessments (ethical, authorized engagements).</p>
-                    <a class="btn small" href="#">View Project</a>
+                    <div class="proj-img-wrap">
+                        <img class="proj-img" src="./0575.jpg" alt="Nmap data">
+                    </div>
+                    <div class="proj-content">
+                        <h4>Nmap Recon & Data Collection</h4>
+                        <p>Network reconnaissance projects and structured data collection for security assessments (ethical, authorized engagements).</p>
+                        <div class="btn-group">
+                            <a class="btn small" href="#">View Project</a>
+                        </div>
+                    </div>
                 </article>
                 <article class="proj-card">
-                    <img class="proj-img" src="./Research Security main image.jpg" alt="Security PoC">
-                    <h4>Security Research / Proof-of-Concept</h4>
-                    <p>Lab-only proof-of-concept tools and defensive tooling demonstrating vulnerabilities and mitigations (ethical research).</p>
-                    <a class="btn small" href="#">View Project</a>
-                </article>
-                    <article class="proj-card">
-                    <img class="proj-img" src="./L11/photo31.png" alt="Foody Restaurant">
-                    <h4>Foody Restaurant</h4>
-                    <p>We serve</p>
-                    <a class="btn small" href="./L11/index.html" href="./L11/style.css">View Project</a>
-                </article>
-                <article class="proj-card">
-                    <img class="proj-img" src="./My Dream Place/My Dream Place.png" alt="My Dream Place">
-                    <h4>My Dream Place</h4>
-                    <p>Lorem, ipsum.</p>
-                    <a class="btn small" href="./My Dream Place/index.html" href="./My Dream Place/style.css">View Project</a>
+                    <div class="proj-img-wrap">
+                        <img class="proj-img" src="./Research Security main image.jpg" alt="Security PoC">
+                    </div>
+                    <div class="proj-content">
+                        <h4>Security Research / Proof-of-Concept</h4>
+                        <p>Lab-only proof-of-concept tools and defensive tooling demonstrating vulnerabilities and mitigations (ethical research).</p>
+                        <div class="btn-group">
+                            <a class="btn small" href="#">View Project</a>
+                        </div>
+                    </div>
                 </article>
                 <article class="proj-card">
-                    <img class="proj-img" src="./L14/screencapture-127-0-0-1-5500-L14-travilifa-html-2025-11-23-23_30_16.png" alt="My Dream Place">
-                    <h4>Travilifa</h4>
-                    <p>Lorem, ipsum.</p>
-                    <a class="btn small" href="./L14/index.html" href="./L14/style.css">View Project</a>
+                    <div class="proj-img-wrap">
+                        <img class="proj-img" src="./L11/photo31.png" alt="Foody Restaurant">
+                    </div>
+                    <div class="proj-content">
+                        <h4>Foody Restaurant</h4>
+                        <p>A responsive restaurant website featuring a dynamic menu, table reservation system, and an inviting user interface designed to enhance the dining experience.</p>
+                        <div class="btn-group">
+                            <a class="btn small" href="./L11/index.html">View Project</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="proj-card">
+                    <div class="proj-img-wrap">
+                        <img class="proj-img" src="./My Dream Place/My Dream Place.png" alt="My Dream Place">
+                    </div>
+                    <div class="proj-content">
+                        <h4>My Dream Place</h4>
+                        <p>A travel booking platform concept allowing users to discover destinations, compare hotels, and book their dream vacations with ease.</p>
+                        <div class="btn-group">
+                            <a class="btn small" href="./My Dream Place/index.html">View Project</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="proj-card">
+                    <div class="proj-img-wrap">
+                        <img class="proj-img" src="./L14/screencapture-127-0-0-1-5500-L14-travilifa-html-2025-11-23-23_30_16.png" alt="My Dream Place">
+                    </div>
+                    <div class="proj-content">
+                        <h4>Travilifa</h4>
+                        <p>A modern travel agency website showcasing exotic locations, travel packages, and customer testimonials to inspire the next adventure.</p>
+                        <div class="btn-group">
+                            <a class="btn small" href="./L14/index.html">View Project</a>
+                        </div>
+                    </div>
                 </article>
                 </div>
             </div>
             </div>
         </div>
+        </div>
+    </section>
+
+    <!-- --- AI & SMART SYSTEMS SECTION --- -->
+    <section id="ai-projects" class="section ai-section">
+        <div class="container">
+            <h2 class="section-title">AI & Smart Systems</h2>
+            <p class="section-summary">Harnessing advanced algorithms and intelligent architectures to build the future of software.</p>
+            
+            <div class="projects-grid">
+                <article class="proj-card">
+                    <div class="proj-img-wrap">
+                        <img class="proj-img" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" alt="SIA AI Project">
+                        <div class="ai-badge" style="position: absolute; top: 15px; left: 15px;">Core Project</div>
+                    </div>
+                    <div class="proj-content">
+                        <div class="ai-badge">SIA Intelligence</div>
+                        <h4>SIA: Deterministic AI Engine</h4>
+                        <p>A sophisticated career analysis system built with clean architecture, real-time Firestore listeners, and deterministic matching algorithms.</p>
+                        <div class="tech-stack">
+                            <i class="fab fa-node-js" title="Node.js"></i>
+                            <i class="fas fa-brain" title="Logic Engine"></i>
+                            <i class="fas fa-database" title="Firebase"></i>
+                        </div>
+                        <div class="btn-group">
+                            <a class="btn small primary" href="#">View Demo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="mobile-preview-card glass-card" style="display: flex; align-items: center; gap: 30px; grid-column: span 1;">
+                    <div class="mobile-mockup">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=400" alt="Mobile Preview">
+                    </div>
+                    <div>
+                        <h4 style="color: var(--neon-blue);">Mobile-First Design</h4>
+                        <p>Optimized for performance and accessibility across all screen sizes. High Lighthouse scores and progressive loading.</p>
+                        <div class="perf-badges" style="display: flex; gap: 10px; margin-top: 15px;">
+                            <span class="ai-badge" style="background: rgba(10, 255, 10, 0.1); border-color: var(--neon-green); color: var(--neon-green);">🚀 Lighthouse: 95+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- TESTIMONIALS SECTION --- -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title">What People Say</h2>
+            <div class="projects-grid">
+                <div class="glass-card">
+                    <p style="font-style: italic;">"Mohamed delivered an amazing UI that truly captured the essence of our vision. His attention to detail in the Cyberpunk aesthetic is world-class."</p>
+                    <div style="display: flex; align-items: center; gap: 15px; margin-top: 20px;">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--neon-blue); display: flex; align-items: center; justify-content: center;"><i class="fas fa-user"></i></div>
+                        <div>
+                            <h5 style="margin:0;">Project Collaborator</h5>
+                            <small>Tech Startup Solutions</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section id="resume" class="section resume">
@@ -216,16 +390,16 @@
             </div>
         </div>
         <div class="resume-footer">
-            <a class="btn download resume-btn" href="assets/Resume-placeholder.pdf" download aria-label="Download Resume">
+            <a class="btn download resume-btn" href="./Mohamed Osman Abu El-Enin.pdf" download aria-label="Download CV">
                 <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
-                Download Resume
+                Download CV
             </a>
             </div>
         </div>
     </section>
     <section id="contact" class="section contact">
         <div class="container grid contact-grid">
-        <form class="contact-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+        <form class="contact-form" action="https://formspree.io/f/mqakevdr" method="POST">
             <h2>Contact Me</h2>
             <label>Name
             <input type="text" name="name" required>
@@ -241,8 +415,9 @@
         <aside class="contact-aside">
             <div class="card">
             <h3>Info</h3>
-            <p>Email: <a href="mailto:your-email@example.com">medsmohamed910@gmail.com</a></p>
-            <p>Location: Cairo, Egypt</p>
+            <p>Email: <a href="mailto:medsmohamed910@gmail.com">medsmohamed910@gmail.com</a></p>
+            <p>Location: Cairo, Egypt 🇪🇬</p>
+            <p style="color: var(--neon-green); font-weight: 600;"><i class="fas fa-globe"></i> Available for Remote Work</p>
             </div>
             <div class="card social">
             <h4>Social</h4>
@@ -269,9 +444,15 @@
         <a href="https://youtube.com/@medsmohamed69?si=sb8HlOFRHOtCT5HT" class="f" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         <a href="https://www.tiktok.com/@digitalhorizonstc" class="f" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
         </div>
-        <div style="float: left; width: 45%;"></div>
+        <div style="float: left; width: 45%;">
+            <div class="perf-badge-footer" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 243, 255, 0.05); padding: 4px 12px; border: 1px solid var(--panel-border); border-radius: 4px; font-size: 11px;">
+                <i class="fas fa-bolt" style="color: var(--neon-blue);"></i> 
+                <span>Lighthouse Performance: <strong style="color: var(--neon-green);">98%</strong></span>
+            </div>
+        </div>
         <small>© 2025-2026 Mohamed Osman Abu Al-Anin. All rights reserved.</small>
     </div>
     </footer>
+    <script src="./script.js"></script>
 </body>
 </html>

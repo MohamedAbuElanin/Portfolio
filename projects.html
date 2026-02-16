@@ -6,12 +6,22 @@
     <title>Projects</title>
     <meta name="description" content="Portfolio of Mohamed Osman Abu Al-enin — Full-Stack Developer & Designer">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./projects.css">
+    <link rel="stylesheet" href="./global.css">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PLACEHOLDER');
+    </script>
 </head>
-</head>
+
 <body>
-    <body>
-        <div id="preloader" class="preloader" aria-hidden="true">
+    <canvas id="particles-canvas"></canvas>
+    <canvas id="matrix-canvas"></canvas>
+    <div id="preloader" class="preloader" aria-hidden="true">
         <div class="spinner">
             <div class="dot"></div>
             <div class="dot"></div>
@@ -28,6 +38,9 @@
             <a href="#resume">Resume</a>
             <a href="#contact">Contact</a>
         </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">
+            <i class="fas fa-moon"></i>
+        </button>
         <button class="menu-toggle" aria-hidden="true">☰</button>
         </header>
 
@@ -45,75 +58,169 @@
                     <div class="panel panel-design">
                         <div class="projects-grid">
                         <article class="proj-card">
-                            <img class="proj-img" src="./Screenshot 2025-08-03 032306.png" alt="Logo projects">
-                            <h4>Logo & Brand Design</h4>
-                            <p>Custom logo systems and visual identity for startups and products. (Example images show mark, color palette and usage.)</p>
-                            <a class="btn small" href="#">View Project</a>
+                            <div class="proj-img-wrap">
+                                <img class="proj-img" src="./Screenshot 2025-08-03 032306.png" alt="Logo projects">
+                            </div>
+                            <div class="proj-content">
+                                <h4>Logo & Brand Design</h4>
+                                <p>Custom logo systems and visual identity for startups and products. (Example images show mark, color palette and usage.)</p>
+                                <div class="btn-group">
+                                    <a class="btn small" href="#">View Project</a>
+                                </div>
+                            </div>
                         </article>
                         <article class="proj-card">
-                            <img class="proj-img" src="./web.png" alt="Website design">
-                            <h4>Website Design</h4>
-                            <p>High-fidelity web mockups and UI kits optimized for conversion and accessibility.</p>
-                            <a class="btn small" href="#">View Project</a>
+                            <div class="proj-img-wrap">
+                                <img class="proj-img" src="./web.png" alt="Website design">
+                            </div>
+                            <div class="proj-content">
+                                <h4>Website Design</h4>
+                                <p>High-fidelity web mockups and UI kits optimized for conversion and accessibility.</p>
+                                <div class="btn-group">
+                                    <a class="btn small" href="#">View Project</a>
+                                </div>
+                            </div>
                         </article>
                         </div>
                     </div>
                     <div class="panel panel-dev">
                         <div class="projects-grid">
                         <article class="proj-card">
-                            <img class="proj-img" src="./hero.avif" alt="Linux setup">
-                            <h4>Advanced Linux Setup</h4>
-                            <p>System configuration, hardening and automation for servers and development environments.</p>
-                            <a class="btn small" href="#">View Project</a>
+                            <div class="proj-img-wrap">
+                                <img class="proj-img" src="./hero.avif" alt="Linux setup">
+                            </div>
+                            <div class="proj-content">
+                                <h4>Advanced Linux Setup</h4>
+                                <p>System configuration, hardening and automation for servers and development environments.</p>
+                                <div class="tech-stack">
+                                    <i class="fab fa-linux" title="Linux"></i>
+                                    <i class="fas fa-terminal" title="Bash"></i>
+                                    <i class="fab fa-docker" title="Docker"></i>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="btn small" href="#">View Project</a>
+                                </div>
+                            </div>
                         </article>
                         <article class="proj-card">
-                            <img class="proj-img" src="./0575.jpg" alt="Nmap data">
-                            <h4>Nmap Recon & Data Collection</h4>
-                            <p>Network reconnaissance projects and structured data collection for security assessments (ethical, authorized engagements).</p>
-                            <a class="btn small" href="#">View Project</a>
+                            <div class="proj-img-wrap">
+                                <img class="proj-img" src="./0575.jpg" alt="Nmap data">
+                            </div>
+                            <div class="proj-content">
+                                <h4>Nmap Recon & Data Collection</h4>
+                                <p>Network reconnaissance projects and structured data collection for security assessments (ethical, authorized engagements).</p>
+                                <div class="btn-group">
+                                    <a class="btn small" href="#">View Project</a>
+                                </div>
+                            </div>
                         </article>
                         <article class="proj-card">
-                            <img class="proj-img" src="./Research Security main image.jpg" alt="Security PoC">
-                            <h4>Security Research / Proof-of-Concept</h4>
-                            <p>Lab-only proof-of-concept tools and defensive tooling demonstrating vulnerabilities and mitigations (ethical research).</p>
-                            <a class="btn small" href="#">View Project</a>
-                        </article>
-                            <article class="proj-card">
-                            <img class="proj-img" src="./L11/photo31.png" alt="Foody Restaurant">
-                            <h4>Foody Restaurant</h4>
-                            <p>We serve</p>
-                            <a class="btn small" href="./L11/index.html" href="./L11/style.css">View Project</a>
-                        </article>
-                        <article class="proj-card">
-                            <img class="proj-img" src="./My Dream Place/My Dream Place.png" alt="My Dream Place">
-                            <h4>My Dream Place</h4>
-                            <p>Lorem, ipsum.</p>
-                            <a class="btn small" href="./My Dream Place/index.html" href="./My Dream Place/style.css">View Project</a>
+                            <div class="proj-img-wrap">
+                                <img class="proj-img" src="./Research Security main image.jpg" alt="Security PoC">
+                            </div>
+                            <div class="proj-content">
+                                <h4>Security Research / Proof-of-Concept</h4>
+                                <p>Lab-only proof-of-concept tools and defensive tooling demonstrating vulnerabilities and mitigations (ethical research).</p>
+                                <div class="btn-group">
+                                    <a class="btn small" href="#">View Project</a>
+                                </div>
+                            </div>
                         </article>
                         <article class="proj-card">
-                            <img class="proj-img" src="./L14/screencapture-127-0-0-1-5500-L14-travilifa-html-2025-11-23-23_30_16.png" alt="My Dream Place">
-                            <h4>Travilifa</h4>
-                            <p>Lorem, ipsum.</p>
-                            <a class="btn small" href="./L14/index.html" href="./L14/style.css">View Project</a>
+                            <div class="proj-img-wrap">
+                                <img class="proj-img" src="./L11/photo31.png" alt="Foody Restaurant">
+                            </div>
+                            <div class="proj-content">
+                                <h4>Foody Restaurant</h4>
+                                <p>A responsive restaurant website featuring a dynamic menu, table reservation system, and an inviting user interface designed to enhance the dining experience.</p>
+                                <div class="btn-group">
+                                    <a class="btn small" href="./L11/">View Project</a>
+                                </div>
+                            </div>
                         </article>
                         <article class="proj-card">
-                            <img class="proj-img" src="./Registration Form/Registration Form.png" alt="Registration Form">
-                            <h4>Registration Form</h4>
-                            <p>Modern registration form with real-time validation and interactive feedback, built using HTML, CSS, and JavaScript.</p>
-                            <a class="btn small" href="./Registration Form/Registration Form.html" href="#">View Project</a>
+                            <div class="proj-img-wrap">
+                                <img class="proj-img" src="./My Dream Place/My Dream Place.png" alt="My Dream Place">
+                            </div>
+                            <div class="proj-content">
+                                <h4>My Dream Place</h4>
+                                <p>A travel booking platform concept allowing users to discover destinations, compare hotels, and book their dream vacations with ease.</p>
+                                <div class="tech-stack">
+                                    <i class="fab fa-html5" title="HTML5"></i>
+                                    <i class="fab fa-css3-alt" title="CSS3"></i>
+                                    <i class="fab fa-js" title="JavaScript"></i>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="btn small" href="./My Dream Place/">View Project</a>
+                                    <a class="btn small outline" href="./My Dream Place/index.html">Live Demo</a>
+                                </div>
+                            </div>
                         </article>
                         <article class="proj-card">
-                            <img class="proj-img" src="./CASA/Screenshot 2025-12-24 011325.png" alt="CASA Store">
-                            <h4>CASA Store</h4>
-                            <p>Built a modern e-commerce front-end using HTML, CSS, and JavaScript with real API integration and a clean, responsive layout.</p>
-                            <a class="btn small" href="./CASA/index.html" href="#">View Project</a>
+                            <div class="proj-img-wrap">
+                                <img class="proj-img" src="./L14/screencapture-127-0-0-1-5500-L14-travilifa-html-2025-11-23-23_30_16.png" alt="My Dream Place">
+                            </div>
+                            <div class="proj-content">
+                                <h4>Travilifa</h4>
+                                <p>A modern travel agency website showcasing exotic locations, travel packages, and customer testimonials to inspire the next adventure.</p>
+                                <div class="btn-group">
+                                    <a class="btn small" href="./L14/">View Project</a>
+                                </div>
+                            </div>
                         </article>
                         <article class="proj-card">
-                            <img class="proj-img" src="./Posts App/screencapture-127-0-0-1-5500-index-html-2025-12-26-18_55_43.png" alt="Posts App">
-                            <h4>Posts App</h4>
-                            <p>Posts App is a front-end project that dynamically displays posts using a real API. It provides search and tag-based filtering functionality, with a modern and responsive design that works seamlessly across all devices.
-                                The project was built using:(HTML/CSS/JS)</p>
-                            <a class="btn small" href="./Posts App/" href="#">View Project</a>
+                            <div class="proj-img-wrap">
+                                <img class="proj-img" src="./Registration Form/Registration Form.png" alt="Registration Form">
+                            </div>
+                            <div class="proj-content">
+                                <h4>Registration Form</h4>
+                                <p>Modern registration form with real-time validation and interactive feedback, built using HTML, CSS, and JavaScript.</p>
+                                <div class="btn-group">
+                                    <a class="btn small" href="./Registration Form/">View Project</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="proj-card">
+                            <div class="proj-img-wrap">
+                                <img class="proj-img" src="./CASA/Screenshot 2025-12-24 011325.png" alt="CASA Store">
+                            </div>
+                            <div class="proj-content">
+                                <h4>CASA Store</h4>
+                                <p>Built a modern e-commerce front-end using HTML, CSS, and JavaScript with real API integration and a clean, responsive layout.</p>
+                                <div class="btn-group">
+                                    <a class="btn small" href="./CASA/">View Project</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="proj-card">
+                            <div class="proj-img-wrap">
+                                <img class="proj-img" src="./Posts App/screencapture-127-0-0-1-5500-index-html-2025-12-26-18_55_43.png" alt="Posts App">
+                            </div>
+                            <div class="proj-content">
+                                <h4>Posts App</h4>
+                                <p>Posts App is a front-end project that dynamically displays posts using a real API. It provides search and tag-based filtering functionality...</p>
+                                <div class="btn-group">
+                                    <a class="btn small" href="./Posts App/">View Project</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="proj-card">
+                            <div class="proj-img-wrap">
+                                <img class="proj-img" src="./SIA/Screenshot 2026-02-14 190628.png" alt="SIA - Smart Intelligent Assistant">
+                            </div>
+                            <div class="proj-content">
+                                <h4>SIA - Smart Intelligent Assistant</h4>
+                                <p>SIA is an AI-powered system inspired by the concept of knowledg in ancient Egyption civilization. The project aims to provide users with a smart digital assistant...</p>
+                                <div class="tech-stack">
+                                    <i class="fas fa-brain" title="AI"></i>
+                                    <i class="fab fa-python" title="Python"></i>
+                                    <i class="fab fa-react" title="React"></i>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="btn small" href="./SIA/">View Project</a>
+                                    <a class="btn small outline" href="./SIA/index.html">Live Demo</a>
+                                </div>
+                            </div>
                         </article>
                         </div>
                     </div>
@@ -136,5 +243,6 @@
                 <small>© 2025-2026 Mohamed Osman Abu Al-Anin. All rights reserved.</small>
             </div>
             </footer>
+    <script src="./script.js"></script>
 </body>
 </html>
